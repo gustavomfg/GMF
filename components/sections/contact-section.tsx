@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Reveal } from "@/components/animations/reveal";
+import CurvedLoop from "@/components/react-bits/CurvedLoop";
 
 const CONTACT_CHANNELS = [
   {
@@ -108,8 +109,22 @@ export function ContactSection() {
   }, []);
 
   return (
-    <section className="contact section-shell" id="contato">
-      <div className="contact-stage">
+    <section className="contact" id="contato">
+      <div className="contact-loop" aria-hidden="true">
+        <CurvedLoop
+          marqueeText="Estágio ✦ Vaga júnior ✦ Software real ✦ Aprendizado contínuo ✦ "
+          speed={1.2}
+          curveAmount={180}
+          fontSize={92}
+          fontWeight={600}
+          letterSpacing={-2}
+          edgeFade={0.12}
+          color="rgba(198, 179, 255, 0.55)"
+          outline
+          separator=""
+        />
+      </div>
+      <div className="contact-stage section-shell">
         <Reveal className="contact-layout" distance={18}>
           <div className="contact-intro">
 

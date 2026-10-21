@@ -86,9 +86,9 @@ test("navegação, diálogo e acessibilidade no desktop", async ({ page }, testI
   const studioVersion = page.locator(".studio-feature-heading > span").nth(1);
   await expect(studioVersion).toBeVisible();
   await expect(studioVersion).toHaveText(/^v\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/i);
-  await expect(page.getByRole("heading", { name: "SysMon" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "SysMon", exact: true })).toBeVisible();
 
-  const projectTrigger = page.locator(".project-index-item").first().getByRole("button", {
+  const projectTrigger = page.locator(".project-sheet").first().getByRole("button", {
     name: /Abrir detalhes de/,
   });
   await projectTrigger.click();
@@ -155,19 +155,19 @@ test("menu móvel, links e reduced motion", async ({ page }, testInfo) => {
   await expect(mobileNavigation).toBeHidden();
   await expect(menuButton).toBeFocused();
 
-  await expect(page.locator(".hero")).toBeVisible();
+  await expect(page.locator(".hero-x")).toBeVisible();
   await expect(page.locator(".studio-feature")).toBeVisible();
   await expect(page.locator('.hero-lanyard[data-lanyard-state="fallback"]')).toBeVisible();
   await expect(page.locator(".hero-lanyard-canvas canvas")).toHaveCount(0);
-  const dotGridSize = await page.locator(".dot-grid__canvas").evaluate((element) => {
+  const skySize = await page.locator(".hero-x-sky .galaxy-canvas").evaluate((element) => {
     const canvas = element as HTMLCanvasElement;
     return {
       width: canvas.width,
       height: canvas.height,
     };
   });
-  expect(dotGridSize.width).toBeGreaterThan(0);
-  expect(dotGridSize.height).toBeGreaterThan(0);
+  expect(skySize.width).toBeGreaterThan(0);
+  expect(skySize.height).toBeGreaterThan(0);
   expect(await page.evaluate(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   )).toBe(true);
@@ -182,7 +182,7 @@ test("carousel navega por setas, tabs e mantém imagens acessíveis", async ({ p
   await page.goto("/");
 
   const carousel = page.locator(".depth-carousel-shell");
-  await expect(page.getByRole("heading", { name: "SysMon" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "SysMon", exact: true })).toBeVisible();
   await carousel.scrollIntoViewIfNeeded();
   await expect(carousel.locator(".depth-carousel__img")).toHaveCount(2);
   await expect(carousel.locator(".depth-carousel__img").first()).toHaveAttribute("loading", "lazy");
@@ -355,12 +355,12 @@ test("limites responsivos mantêm superfícies principais contidas", async ({ pa
   for (const width of responsiveWidths) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
-    await expect(page.locator(".hero")).toBeVisible();
+    await expect(page.locator(".hero-x")).toBeVisible();
     await page.locator("#contato").scrollIntoViewIfNeeded();
 
     const dimensions = await page.evaluate(() => ({
       innerWidth: window.innerWidth,
-      regions: Array.from(document.querySelectorAll(".hero, .depth-carousel-shell, #contato, .contact-links")).map((element) => {
+      regions: Array.from(document.querySelectorAll(".hero-x, .depth-carousel-shell, #contato, .contact-links")).map((element) => {
         const rect = element.getBoundingClientRect();
         return { left: rect.left, right: rect.right };
       }),
@@ -387,14 +387,14 @@ test("paleta de comandos abre estudos de caso pelo teclado", async ({ page }, te
   const openPaletteAccessibility = await new AxeBuilder({ page }).analyze();
   expect(openPaletteAccessibility.violations).toEqual([]);
 
-  await search.fill("inspector");
-  await expect(page.getByRole("option").first()).toContainText("Nocturne Inspector");
+  await search.fill("greeter");
+  await expect(page.getByRole("option").first()).toContainText("Nocturne Greeter");
   await page.keyboard.press("Enter");
 
   await expect(search).toBeHidden();
-  await expect(page.getByRole("dialog", { name: "Nocturne Inspector" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeVisible();
   await page.keyboard.press("Escape");
-  await expect(page.getByRole("dialog", { name: "Nocturne Inspector" })).toBeHidden();
+  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeHidden();
 
   await trigger.click();
   await expect(search).toBeFocused();

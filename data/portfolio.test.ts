@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { NAV_ITEMS, PROJECTS } from "@/data/portfolio";
+import { NAV_ITEMS, PROJECT_CHAPTERS, PROJECTS } from "@/data/portfolio";
+import type { Project } from "@/types/portfolio";
+
+const projects: readonly Project[] = PROJECTS;
 
 describe("portfolio data", () => {
   it("keeps project identifiers unique and complete", () => {
@@ -34,12 +37,12 @@ describe("portfolio data", () => {
   it("publishes the source links documented for the Nocturne projects", () => {
     const expectedRepositories = {
       studio: "https://github.com/gustavomfg/nocturne-studio",
-      inspector: "https://github.com/gustavomfg/nocturne-inspector",
-      control: "https://github.com/gustavomfg/nocturne-control",
+      ovra: "https://github.com/gustavomfg/ovra",
+      greeter: "https://github.com/gustavomfg/nocturne-greeter",
     } as const;
 
     for (const [projectKey, repository] of Object.entries(expectedRepositories)) {
-      const project = PROJECTS.find((item) => item.key === projectKey);
+      const project = projects.find((item) => item.key === projectKey);
 
       expect(project?.links).toContainEqual({
         label: "Ver código-fonte",
@@ -47,6 +50,22 @@ describe("portfolio data", () => {
         type: "source",
       });
     }
+  });
+
+  it("keeps the early-stage Atlas prototype without public links", () => {
+    const atlas = projects.find((project) => project.key === "atlas");
+
+    expect(atlas).toBeDefined();
+    expect(atlas?.links).toBeUndefined();
+  });
+
+  it("indexes every displayed project chapter once, in reading order", () => {
+    const anchors = PROJECT_CHAPTERS.map((chapter) => chapter.anchor);
+
+    expect(new Set(anchors).size).toBe(anchors.length);
+    expect(PROJECT_CHAPTERS.map((chapter) => chapter.id)).toEqual(
+      [...PROJECT_CHAPTERS.map((chapter) => chapter.id)].sort(),
+    );
   });
 
   it("keeps navigation targets unique", () => {

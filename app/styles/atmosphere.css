@@ -1,19 +1,1 @@
-/* The canvas is the single global atmosphere: precise, quiet and interactive. */
-.dot-grid {
-  position: absolute;
-  z-index: -1;
-  inset: 0 0 auto;
-  height: min(860px, 100svh);
-  overflow: hidden;
-  pointer-events: none;
-  opacity: .24;
-  background: transparent;
-  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 95%);
-  mask-image: linear-gradient(to bottom, #000, transparent 95%);
-}
-
 main#conteudo { position: relative; isolation: isolate; }
-
-@media (prefers-reduced-motion: reduce) {
-  .dot-grid { opacity: .18; }
-}
