@@ -308,3 +308,19 @@ Eyebrow pequeno e técnico abre o capítulo; título grande fornece a ideia; tex
 A homepage usa Manrope Variable em títulos e corpo, com JetBrains Mono em metadados e rótulos técnicos. O nome tem teto de 96px, tracking de -0.04em e subtítulo de 24–32px. O botão principal tem fundo claro, texto escuro e altura mínima de 48px; contato é uma ação secundária com borda. O pontilhado fica restrito ao início, com opacidade de 24% e desaparecimento gradual.
 
 O Studio apresenta uma captura por vez, quatro botões de miniaturas com estado pressionado e legenda acessível. O dossiê técnico usa details/summary nativo. A composição mobile tem gutters de 20px e crachá estático em área de 260px para evitar custo 3D e cortes em telas pequenas; a cena interativa permanece no desktop. Essas decisões substituem as descrições anteriores de monospace integral e galeria editorial longa para esta superfície.
+
+
+## Redesign da experiência — outubro de 2026
+
+A homepage passou a ser lida como uma noite em capítulos. A identidade continua escura, técnica e autoral; o movimento agora conduz a leitura dos projetos em vez de decorar.
+
+- **Hero:** céu estrelado em WebGL (React Bits `Galaxy`, paleta violeta/azul, DPR 1, montado 1,2 s após a carga para não disputar a GPU com o crachá 3D). O nome usa `VariableProximity` sobre o eixo `wght` da Manrope (480→800 perto do cursor) e o papel usa `RotatingText`. Um selo verde indica disponibilidade para estágio e vagas júnior, e um índice no rodapé do hero leva a cada capítulo de projeto.
+- **Faixa de stack:** `LogoLoop` com as tecnologias usadas nos projetos, em mono uppercase.
+- **Manifesto:** `ScrollReveal` com uma frase que resume como Gustavo aprende construindo.
+- **Projetos:** o Nocturne Studio abre com `ScrollExpand` (a captura real cresce até ocupar a tela), seguido da galeria e do dossiê; o SysMon mantém o showcase em profundidade; os demais projetos formam um deck `ScrollStack` de folhas grandes (mídia à esquerda, status, papel, descrição, tags e ações). O Nocturne Atlas aparece sem link enquanto está em fase inicial.
+- **Contato:** `CurvedLoop` em contorno violeta acima do bloco de contato.
+- **Borda da página:** `GradualBlur` discreto na base da viewport, que some no fim da página.
+
+Os componentes do React Bits ficam em `components/react-bits/`, copiados do registro `@react-bits` (variantes TS-CSS). As alterações locais são mínimas: o `Galaxy` não chama `loseContext()` no cleanup (o Strict Mode remontava o mesmo canvas com o contexto perdido), atribuições de ref durante o render foram movidas para `useLayoutEffect` e o `VariableProximity` herda a fonte da página em vez de importar a Roboto Flex.
+
+Abaixo de 1001px ou com `prefers-reduced-motion`, o `ScrollExpand` vira uma imagem estática e o `ScrollStack` vira uma lista simples (`hooks/use-media-query.ts`). Os estilos dessa camada vivem em `app/styles/experience.css`.

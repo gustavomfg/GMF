@@ -12,7 +12,7 @@ Beyond presenting my work, it serves as the public entry point to the **Nocturne
 
 # Features
 
-- 🎬 Cinematic introduction
+- 🌌 Interactive starfield hero and scroll-driven project chapters
 - 📱 Fully responsive layout
 - ♿ Accessibility-first experience
 - ⚡ Optimized performance
@@ -35,11 +35,16 @@ Beyond presenting my work, it serves as the public entry point to the **Nocturne
 - React
 - TypeScript
 
+## Motion & Effects
+
+- React Bits components (Galaxy, VariableProximity, RotatingText, ScrollReveal, ScrollExpand, ScrollStack, LogoLoop, CurvedLoop, GradualBlur), vendored in `components/react-bits/`
+- GSAP, Motion and React Three Fiber
+
 ## Styling
 
 - Modular CSS
 - Design Tokens
-- JetBrains Mono
+- Manrope and JetBrains Mono
 
 ## Tooling
 
@@ -93,6 +98,8 @@ http://localhost:3000
 app/
   styles/
 components/
+  react-bits/   vendored React Bits sources (see DESIGN.md)
+  sections/
 hooks/
 data/
 lib/
