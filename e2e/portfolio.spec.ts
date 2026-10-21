@@ -387,14 +387,14 @@ test("paleta de comandos abre estudos de caso pelo teclado", async ({ page }, te
   const openPaletteAccessibility = await new AxeBuilder({ page }).analyze();
   expect(openPaletteAccessibility.violations).toEqual([]);
 
-  await search.fill("inspector");
-  await expect(page.getByRole("option").first()).toContainText("Nocturne Inspector");
+  await search.fill("greeter");
+  await expect(page.getByRole("option").first()).toContainText("Nocturne Greeter");
   await page.keyboard.press("Enter");
 
   await expect(search).toBeHidden();
-  await expect(page.getByRole("dialog", { name: "Nocturne Inspector" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeVisible();
   await page.keyboard.press("Escape");
-  await expect(page.getByRole("dialog", { name: "Nocturne Inspector" })).toBeHidden();
+  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeHidden();
 
   await trigger.click();
   await expect(search).toBeFocused();

@@ -1,8 +1,11 @@
 import {
   BrainCircuit,
+  LockKeyhole,
   PanelsTopLeft,
   Radar,
   ScanSearch,
+  Sparkles,
+  Waypoints,
   type LucideProps,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -13,6 +16,9 @@ const PROJECT_ICONS = {
   "panels-top-left": PanelsTopLeft,
   "scan-search": ScanSearch,
   radar: Radar,
+  sparkles: Sparkles,
+  "lock-keyhole": LockKeyhole,
+  waypoints: Waypoints,
 } satisfies Record<ProjectIconKey, ComponentType<LucideProps>>;
 
 interface ProjectIconProps extends LucideProps {

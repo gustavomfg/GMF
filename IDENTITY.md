@@ -186,19 +186,29 @@ Main areas explored:
 
 ---
 
-## Nocturne Inspector
+## OVRA
 
-Software engineering project focused on architecture validation, project inspection and developer tooling.
+Experimental creative development lab in WebGL2, GLSL, GSAP and React.
 
-The Python tool produces deterministic, evidence-based reports about architecture and essential documentation without modifying the inspected project. Its keyboard-friendly dashboard is optional.
+Twelve real-time shader specimens in five families, with an interactive fluid opening, a live catalogue and an observation chamber with adjustable parameters.
+
+Live: https://gustavomfg.github.io/ovra/
 
 ---
 
-## Solaris (Nocturne Control repository)
+## Nocturne Greeter
 
-Experimental portfolio study in WebGL2, procedural visuals and interaction.
+Cinematic Wayland greeter built with Quickshell, QML and GLSL, integrated with greetd and PAM.
 
-The study explores responsive composition, mouse and touch input, reduced motion, and a 2D fallback.
+Packaged for Arch Linux and in daily use on the author's system.
+
+---
+
+## Nocturne Atlas
+
+Early-stage prototype of a Project Space that connects documents, components, decisions, pull requests and releases in a navigable map, with a context timeline and guided trails. Frontend in Next.js, React and TypeScript with demo data; a Java API is planned for the backend.
+
+Private repository; no public link yet.
 
 ---
 
@@ -325,13 +335,13 @@ Nocturne Studio
 
 https://github.com/gustavomfg/nocturne-studio
 
-Nocturne Inspector
+OVRA
 
-https://github.com/gustavomfg/nocturne-inspector
+https://github.com/gustavomfg/ovra
 
-Solaris (repository: nocturne-control)
+Nocturne Greeter
 
-https://github.com/gustavomfg/nocturne-control
+https://github.com/gustavomfg/nocturne-greeter
 
 SysMon
 
