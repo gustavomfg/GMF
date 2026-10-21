@@ -79,8 +79,8 @@ void main() {
   gl_Position = vec4(aPosition, 0.0, 1.0);
 }`;
 
-const FRAGMENT = `#version 300 es
-precision highp float;
+const FRAGMENT = (defines: string) => `#version 300 es
+${defines}precision highp float;
 precision highp int;
 uniform float uTime;
 uniform vec2 uResolution;
@@ -279,7 +279,7 @@ const start = (gl: WebGL2RenderingContext, palette: boolean, repel: boolean, war
   const fragment = gl.createShader(gl.FRAGMENT_SHADER);
   if (!program || !vertex || !fragment) return null;
   gl.shaderSource(vertex, VERTEX);
-  gl.shaderSource(fragment, FRAGMENT.replace('\n', `\n${defines}`));
+  gl.shaderSource(fragment, FRAGMENT(defines));
   gl.compileShader(vertex);
   gl.compileShader(fragment);
   gl.attachShader(program, vertex);
