@@ -387,7 +387,7 @@ test("paleta de comandos abre estudos de caso pelo teclado", async ({ page }, te
   const openPaletteAccessibility = await new AxeBuilder({ page }).analyze();
   expect(openPaletteAccessibility.violations).toEqual([]);
 
-  await search.fill("greeter");
+  await search.fill("umbra");
   await expect(page.getByRole("option").first()).toContainText("UMBRA");
   await page.keyboard.press("Enter");
 
@@ -415,8 +415,12 @@ test("BATTY reage à proximidade do cursor no desktop", async ({ page }, testInf
   expect(box).not.toBeNull();
   if (!box) return;
 
-  await page.mouse.move(box.x - 320, box.y + 80);
-  await expect(batpet).toHaveAttribute("data-pose", "lookLeft");
+  // The server-rendered sprite can appear before hydration attaches pointer listeners.
+  await expect.poll(async () => {
+    await page.mouse.move(box.x - 321, box.y + 80);
+    await page.mouse.move(box.x - 320, box.y + 80);
+    return batpet.getAttribute("data-pose");
+  }).toBe("lookLeft");
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
   await expect(batpet).toHaveAttribute("data-pose", "shy");
 });
