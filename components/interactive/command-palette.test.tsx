@@ -69,7 +69,7 @@ describe("CommandPalette", () => {
     window.removeEventListener(OPEN_PROJECT_EVENT, listener);
   });
 
-  it("alterna o BatPet e anuncia o novo estado", async () => {
+  it("alterna o BATTY e anuncia o novo estado", async () => {
     const user = userEvent.setup();
     render(<CommandPalette />);
 
@@ -77,8 +77,8 @@ describe("CommandPalette", () => {
     await user.type(await screen.findByRole("combobox"), "morcego");
     await user.keyboard("{Enter}");
 
-    expect(screen.getByRole("status").textContent).toContain("O BatPet foi dormir");
-    expect(within(screen.getByRole("listbox")).getByRole("option").textContent).toContain("Chamar o BatPet de volta");
+    expect(screen.getByRole("status").textContent).toContain("O BATTY foi dormir");
+    expect(within(screen.getByRole("listbox")).getByRole("option").textContent).toContain("Chamar o BATTY de volta");
   });
 
   it("mostra uma sugestão quando nada corresponde à busca", async () => {

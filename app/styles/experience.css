@@ -1,6 +1,6 @@
 /* Experience layer — October 2026 redesign.
    A night sky opens the page, the projects unfold as chapters (a scroll-expanding flagship,
-   the SysMon showcase, then a stacking deck), and contact closes with a curved marquee.
+   the PULS showcase, then a stacking deck), and contact closes with a curved marquee.
    Motion comes from React Bits components in components/react-bits; every scene has a static
    fallback below 1001px or under prefers-reduced-motion. */
 

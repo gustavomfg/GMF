@@ -5,7 +5,7 @@ const COMMANDS = [
   { label: "Ir para Projetos", keywords: ["trabalhos"] },
   { label: "Baixar currículo", keywords: ["cv", "pdf"] },
   { label: "Copiar e-mail", keywords: ["contato"] },
-  { label: "Estudo de caso: BatPet", keywords: ["rust", "bevy"] },
+  { label: "Estudo de caso: BATTY", keywords: ["rust", "bevy"] },
 ] as const;
 
 describe("searchCommands", () => {
@@ -23,15 +23,15 @@ describe("searchCommands", () => {
   });
 
   it("aceita busca por subsequência e prioriza correspondências contíguas", () => {
-    const results = searchCommands("bp", COMMANDS).map((match) => match.command.label);
+    const results = searchCommands("bt", COMMANDS).map((match) => match.command.label);
 
-    expect(results[0]).toBe("Estudo de caso: BatPet");
+    expect(results[0]).toBe("Estudo de caso: BATTY");
   });
 
   it("usa palavras-chave como alternativa sem realçar o rótulo", () => {
     const [first] = searchCommands("rust", COMMANDS);
 
-    expect(first.command.label).toBe("Estudo de caso: BatPet");
+    expect(first.command.label).toBe("Estudo de caso: BATTY");
     expect(first.matches).toEqual([]);
   });
 

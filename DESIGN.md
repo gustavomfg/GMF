@@ -317,7 +317,7 @@ A homepage passou a ser lida como uma noite em capítulos. A identidade continua
 - **Hero:** céu estrelado em WebGL (React Bits `Galaxy`, paleta violeta/azul, DPR 1, montado 1,2 s após a carga para não disputar a GPU com o crachá 3D). O nome usa `VariableProximity` sobre o eixo `wght` da Manrope (480→800 perto do cursor) e o papel usa `RotatingText`. Um selo verde indica disponibilidade para estágio e vagas júnior, e um índice no rodapé do hero leva a cada capítulo de projeto.
 - **Faixa de stack:** `LogoLoop` com as tecnologias usadas nos projetos, em mono uppercase.
 - **Manifesto:** `ScrollReveal` com uma frase que resume como Gustavo aprende construindo.
-- **Projetos:** o Nocturne Studio abre com `ScrollExpand` (a captura real cresce até ocupar a tela), seguido da galeria e do dossiê; o SysMon mantém o showcase em profundidade; os demais projetos formam um deck `ScrollStack` de folhas grandes (mídia à esquerda, status, papel, descrição, tags e ações). O Nocturne Atlas aparece sem link enquanto está em fase inicial.
+- **Projetos:** o NOCT abre com `ScrollExpand` (a captura real cresce até ocupar a tela), seguido da galeria e do dossiê; o PULS mantém o showcase em profundidade; os demais projetos formam um deck `ScrollStack` de folhas grandes (mídia à esquerda, status, papel, descrição, tags e ações). O ATLS aparece sem link enquanto está em fase inicial.
 - **Contato:** `CurvedLoop` em contorno violeta acima do bloco de contato.
 - **Borda da página:** `GradualBlur` discreto na base da viewport, que some no fim da página.
 

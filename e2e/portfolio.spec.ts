@@ -86,7 +86,7 @@ test("navegação, diálogo e acessibilidade no desktop", async ({ page }, testI
   const studioVersion = page.locator(".studio-feature-heading > span").nth(1);
   await expect(studioVersion).toBeVisible();
   await expect(studioVersion).toHaveText(/^v\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/i);
-  await expect(page.getByRole("heading", { name: "SysMon", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "PULS", exact: true })).toBeVisible();
 
   const projectTrigger = page.locator(".project-sheet").first().getByRole("button", {
     name: /Abrir detalhes de/,
@@ -182,7 +182,7 @@ test("carousel navega por setas, tabs e mantém imagens acessíveis", async ({ p
   await page.goto("/");
 
   const carousel = page.locator(".depth-carousel-shell");
-  await expect(page.getByRole("heading", { name: "SysMon", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "PULS", exact: true })).toBeVisible();
   await carousel.scrollIntoViewIfNeeded();
   await expect(carousel.locator(".depth-carousel__img")).toHaveCount(2);
   await expect(carousel.locator(".depth-carousel__img").first()).toHaveAttribute("loading", "lazy");
@@ -291,7 +291,7 @@ test("carousel permanece utilizável quando imagens falham", async ({ page }, te
   await expect(carousel.locator(".depth-carousel__img")).toHaveCount(2);
   await expect(carousel.locator(".depth-carousel__img").first()).toHaveAttribute(
     "alt",
-    /Interface completa do SysMon/,
+    /Interface completa do PULS/,
   );
   await carousel.getByRole("button", { name: "Próxima evidência" }).click();
   await expect(carousel.locator(".depth-carousel__position")).toHaveText("02 / 02");
@@ -388,13 +388,13 @@ test("paleta de comandos abre estudos de caso pelo teclado", async ({ page }, te
   expect(openPaletteAccessibility.violations).toEqual([]);
 
   await search.fill("greeter");
-  await expect(page.getByRole("option").first()).toContainText("Nocturne Greeter");
+  await expect(page.getByRole("option").first()).toContainText("UMBRA");
   await page.keyboard.press("Enter");
 
   await expect(search).toBeHidden();
-  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "UMBRA" })).toBeVisible();
   await page.keyboard.press("Escape");
-  await expect(page.getByRole("dialog", { name: "Nocturne Greeter" })).toBeHidden();
+  await expect(page.getByRole("dialog", { name: "UMBRA" })).toBeHidden();
 
   await trigger.click();
   await expect(search).toBeFocused();
@@ -403,7 +403,7 @@ test("paleta de comandos abre estudos de caso pelo teclado", async ({ page }, te
   await expect(trigger).toBeFocused();
 });
 
-test("BatPet reage à proximidade do cursor no desktop", async ({ page }, testInfo) => {
+test("BATTY reage à proximidade do cursor no desktop", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop-chromium");
   await page.goto("/");
 
@@ -421,7 +421,7 @@ test("BatPet reage à proximidade do cursor no desktop", async ({ page }, testIn
   await expect(batpet).toHaveAttribute("data-pose", "shy");
 });
 
-test("BatPet fica fora do layout móvel", async ({ page }, testInfo) => {
+test("BATTY fica fora do layout móvel", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile-chromium");
   await page.goto("/");
 

@@ -71,7 +71,7 @@
 .project-dialog-trigger:hover { color: var(--text-inverse); border-color: var(--violet-soft); background: rgba(145, 103, 255, .07); }
 .project-dialog-trigger:focus-visible { outline: 2px solid var(--violet-soft); outline-offset: 4px; }
 
-/* Nocturne Studio case-study composition: introduction, evidence surface, then dossier. */
+/* NOCT case-study composition: introduction, evidence surface, then dossier. */
 
 .studio-feature-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(220px, .75fr); gap: clamp(28px, 6vw, 84px); align-items: end; padding: 32px 0 24px; }
 .studio-feature-intro h3 { margin: 8px 0 18px; font-size: clamp(44px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; font-weight: 500; }
@@ -81,7 +81,7 @@
 .studio-source-link { min-height: 42px; padding: 0 13px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: var(--radius-button); color: var(--text-bright); font-size: var(--font-label); transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease, color var(--duration-fast) ease; }
 .studio-source-link svg:last-child { margin-left: 3px; }
 .studio-source-link:hover { border-color: var(--violet-soft); color: var(--text-inverse); background: rgba(145,103,255,.07); }
-.studio-gallery-wrap { padding: 16px 0 60px; }/* Nocturne Studio evidence story: real product media leads, text only frames its meaning. */
+.studio-gallery-wrap { padding: 16px 0 60px; }/* NOCT evidence story: real product media leads, text only frames its meaning. */
 
 .studio-evidence-dossier { padding: 22px 0 2px; border-top: 1px solid var(--line-strong); }
 

@@ -187,7 +187,7 @@
 /* Sections focused programmatically (palette or mobile menu) only move the reading position. */
 [id][tabindex="-1"]:focus { outline: none; }
 
-/* Project index: a live pointer from BatPet's card to the web version above. */
+/* Project index: a live pointer from BATTY's card to the web version above. */
 .project-index-live {
   display: flex;
   align-items: center;
@@ -204,7 +204,7 @@
   .project-index-live { display: none; }
 }
 
-/* BatPet: the Rust desktop companion, hanging from the navigation rail. */
+/* BATTY: the Rust desktop companion, hanging from the navigation rail. */
 .batpet {
   --batpet-scale: 2;
   position: absolute;

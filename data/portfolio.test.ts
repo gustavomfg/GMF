@@ -29,16 +29,16 @@ describe("portfolio data", () => {
 
     expect(portfolio?.links).toContainEqual({
       label: "Ver código-fonte",
-      href: "https://github.com/gustavomfg/Portfolio",
+      href: "https://github.com/gustavomfg/GMF",
       type: "source",
     });
   });
 
   it("publishes the source links documented for the Nocturne projects", () => {
     const expectedRepositories = {
-      studio: "https://github.com/gustavomfg/nocturne-studio",
+      studio: "https://github.com/gustavomfg/NOCT",
       ovra: "https://github.com/gustavomfg/ovra",
-      greeter: "https://github.com/gustavomfg/nocturne-greeter",
+      greeter: "https://github.com/gustavomfg/UMBRA",
     } as const;
 
     for (const [projectKey, repository] of Object.entries(expectedRepositories)) {

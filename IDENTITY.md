@@ -167,7 +167,7 @@ They should always be presented as personal engineering projects rather than pro
 
 ---
 
-## Nocturne Studio
+## NOCT
 
 AI-powered software engineering workspace focused on project-oriented development instead of prompt-oriented workflows.
 
@@ -196,7 +196,7 @@ Live: https://gustavomfg.github.io/ovra/
 
 ---
 
-## Nocturne Greeter
+## UMBRA
 
 Cinematic Wayland greeter built with Quickshell, QML and GLSL, integrated with greetd and PAM.
 
@@ -204,7 +204,7 @@ Packaged for Arch Linux and in daily use on the author's system.
 
 ---
 
-## Nocturne Atlas
+## ATLS
 
 Early-stage prototype of a Project Space that connects documents, components, decisions, pull requests and releases in a navigable map, with a context timeline and guided trails. Frontend in Next.js, React and TypeScript with demo data; a Java API is planned for the backend.
 
@@ -212,13 +212,13 @@ Private repository; no public link yet.
 
 ---
 
-## SysMon
+## PULS
 
 Rust terminal system monitor for CPU, memory, GPU, network, storage, temperatures and processes.
 
 ---
 
-## BatPet
+## BATTY
 
 Experimental Rust desktop companion in pixel-art with cursor-reactive character animation and a flight cycle between perches.
 
@@ -329,24 +329,24 @@ gustavomfgdev@gmail.com
 
 Portfolio
 
-https://github.com/gustavomfg/Portfolio
+https://github.com/gustavomfg/GMF
 
-Nocturne Studio
+NOCT
 
-https://github.com/gustavomfg/nocturne-studio
+https://github.com/gustavomfg/NOCT
 
 OVRA
 
 https://github.com/gustavomfg/ovra
 
-Nocturne Greeter
+UMBRA
 
-https://github.com/gustavomfg/nocturne-greeter
+https://github.com/gustavomfg/UMBRA
 
-SysMon
+PULS
 
-https://github.com/gustavomfg/sysmon
+https://github.com/gustavomfg/PULS
 
-BatPet
+BATTY
 
-https://github.com/gustavomfg/My-Bat-Pet
+https://github.com/gustavomfg/BATTY

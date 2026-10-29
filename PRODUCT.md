@@ -38,12 +38,12 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - Seus principais interesses são arquitetura de software, backend, aplicações desktop e tecnologias web modernas.
 - TypeScript e JavaScript são linguagens de uso diário; Java é sua principal linguagem acadêmica; Python está em aprendizado; Rust tem evidência em projetos.
 - As tecnologias confirmadas incluem React, Node.js, REST APIs, Electron, HTML, CSS e SQLite, além das ferramentas de desenvolvimento registradas em `IDENTITY.md`.
-- Nocturne Studio e SysMon são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. OVRA, Nocturne Greeter, Nocturne Atlas e BatPet também devem ser apresentados de acordo com suas evidências. O Nocturne Atlas está em fase inicial e o repositório é privado: aparece sem link até o autor decidir publicá-lo.
+- NOCT e PULS são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. OVRA, UMBRA, ATLS e BATTY também devem ser apresentados de acordo com suas evidências. O ATLS está em fase inicial e o repositório é privado: aparece sem link até o autor decidir publicá-lo.
 - Java deve ganhar evidência progressivamente. O futuro projeto Full Stack com Java e Spring Boot só deve ser apresentado como concluído ou público quando houver evidência verificável de que está pronto.
 - Não inventar ou exagerar experiência, métricas, números, tecnologias, resultados, conquistas, responsabilidades ou maturidade profissional.
 - Não apresentar Gustavo como desenvolvedor sênior. A comunicação deve transmitir competência, curiosidade técnica, capacidade de construir software real e potencial de crescimento.
 - Em caso de conflito ou incerteza, `IDENTITY.md`, o currículo confirmado e os repositórios públicos são as fontes de verdade; deve-se perguntar antes de assumir.
-- O currículo, um repositório ou documentação local do SysMon e detalhes verificáveis da transição profissional não estão presentes neste repositório no momento. Trabalhos futuros devem solicitar essas fontes antes de publicar detalhes.
+- O currículo, um repositório ou documentação local do PULS e detalhes verificáveis da transição profissional não estão presentes neste repositório no momento. Trabalhos futuros devem solicitar essas fontes antes de publicar detalhes.
 
 ## Brand Commitments
 
@@ -60,15 +60,15 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - `IDENTITY.md`: fonte canônica da identidade profissional, competências, filosofia de engenharia, objetivos, contatos e projetos públicos.
 - `data/portfolio.ts`: conteúdo estruturado atualmente exibido no portfólio.
 - `public/curriculo-gustavo-maquias.pdf`: currículo atual publicado sem telefone nem localização pessoal.
-- `public/batpet/poses.png`: evidência visual de estados do BatPet.
+- `public/batpet/poses.png`: evidência visual de estados do BATTY.
 - `README.md`: arquitetura, stack, comandos e práticas de qualidade deste projeto.
-- Repositório público do portfólio: https://github.com/gustavomfg/Portfolio
-- Nocturne Studio: https://github.com/gustavomfg/nocturne-studio
+- Repositório público do portfólio: https://github.com/gustavomfg/GMF
+- NOCT: https://github.com/gustavomfg/NOCT
 - OVRA: https://github.com/gustavomfg/ovra
-- Nocturne Greeter: https://github.com/gustavomfg/nocturne-greeter
-- Nocturne Atlas: repositório privado, em fase inicial (sem link público)
-- SysMon: https://github.com/gustavomfg/sysmon
-- BatPet: https://github.com/gustavomfg/My-Bat-Pet
+- UMBRA: https://github.com/gustavomfg/UMBRA
+- ATLS: repositório privado, em fase inicial (sem link público)
+- PULS: https://github.com/gustavomfg/PULS
+- BATTY: https://github.com/gustavomfg/BATTY
 - Perfil no GitHub: https://github.com/gustavomfg
 - Perfil no LinkedIn: https://www.linkedin.com/in/gustavomfg
 - Testes automatizados locais cobrem componentes, navegação, responsividade e acessibilidade com axe.

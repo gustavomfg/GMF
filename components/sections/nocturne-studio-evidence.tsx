@@ -24,7 +24,7 @@ const EVIDENCE_ITEMS: readonly NocturneStudioEvidenceItem[] = [
     title: "Projeto, conversa e agente no mesmo ambiente",
     description: "O workspace mantém contexto, execução e acompanhamento do agente dentro do mesmo fluxo.",
     src: "/nocturne-studio/workspace-overview.png",
-    alt: "Workspace do Nocturne Studio com navegação, conversa de revisão, seletor de modelo e painel do agente",
+    alt: "Workspace do NOCT com navegação, conversa de revisão, seletor de modelo e painel do agente",
     width: 1440,
     height: 900,
     sizes: "(max-width: 700px) calc(100vw - 32px), min(1240px, calc(100vw - 56px))",
@@ -36,7 +36,7 @@ const EVIDENCE_ITEMS: readonly NocturneStudioEvidenceItem[] = [
     title: "Sugestões fundamentadas em evidências",
     description: "Cada revisão pode reunir origem, arquivos afetados, histórico, benefícios esperados e uma solução proposta antes da aplicação.",
     src: "/nocturne-studio/suggestion-detail.png",
-    alt: "Detalhe de uma sugestão do Nocturne Studio com evidências, proveniência, histórico, arquivos afetados e solução proposta",
+    alt: "Detalhe de uma sugestão do NOCT com evidências, proveniência, histórico, arquivos afetados e solução proposta",
     width: 1194,
     height: 1013,
     sizes: "(max-width: 700px) calc(100vw - 32px), 780px",
@@ -48,7 +48,7 @@ const EVIDENCE_ITEMS: readonly NocturneStudioEvidenceItem[] = [
     title: "Análise técnica por dimensão",
     description: "Arquitetura, segurança, testes, performance, manutenção e documentação organizadas em uma leitura única do projeto.",
     src: "/nocturne-studio/suggestions.png",
-    alt: "Painel do Nocturne Studio mostrando a saúde do projeto e sugestões organizadas por dimensão técnica",
+    alt: "Painel do NOCT mostrando a saúde do projeto e sugestões organizadas por dimensão técnica",
     width: 676,
     height: 1015,
     sizes: "(max-width: 700px) calc(100vw - 32px), 420px",
@@ -60,7 +60,7 @@ const EVIDENCE_ITEMS: readonly NocturneStudioEvidenceItem[] = [
     title: "IA sem dependência de um único acesso",
     description: "O Studio conecta APIs como Gemini, OpenRouter, DeepSeek e Groq, runtimes locais e endpoints próprios, sem depender de um fornecedor.",
     src: "/nocturne-studio/ai-providers.png",
-    alt: "Configurações de IA do Nocturne Studio com as opções Google Gemini, OpenRouter, DeepSeek e Groq",
+    alt: "Configurações de IA do NOCT com as opções Google Gemini, OpenRouter, DeepSeek e Groq",
     width: 860,
     height: 650,
     sizes: "(max-width: 700px) calc(100vw - 32px), 560px",
@@ -72,7 +72,7 @@ export function NocturneStudioEvidence() {
   const item = EVIDENCE_ITEMS[activeIndex];
 
   return (
-    <section className="studio-gallery" aria-label="Evidências visuais do Nocturne Studio">
+    <section className="studio-gallery" aria-label="Evidências visuais do NOCT">
       <figure className="studio-gallery-main">
         <div className="studio-gallery-image">
           <Image src={item.src} alt={item.alt} width={item.width} height={item.height}

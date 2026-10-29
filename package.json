@@ -1,7 +1,7 @@
 {
   "name": "nocturne-portfolio",
   "version": "1.0.0",
-  "description": "Portfólio pessoal e apresentação do ecossistema Nocturne.",
+  "description": "GMF — Portfólio pessoal e projetos de software de Gustavo Maquias.",
   "engines": {
     "node": ">=24",
     "pnpm": ">=11.15.1"

@@ -11,7 +11,7 @@ export const TECHNICAL_PROFILE = [
   { label: "Direção principal", value: "Java em aprofundamento contínuo" },
   { label: "Uso diário", value: "TypeScript e JavaScript" },
   { label: "Construção", value: "React, Node.js e Electron" },
-  { label: "Em desenvolvimento", value: "Rust no SysMon e no BatPet · QML no Greeter" },
+  { label: "Em desenvolvimento", value: "Rust no PULS e no BATTY · QML no Greeter" },
   { label: "Certificação", value: "Fundamentos do GitHub · DataCamp (2026)" },
 ] as const satisfies readonly TechnicalProfileItem[];
 
@@ -19,7 +19,7 @@ export const PROJECTS = [
   {
     id: "01",
     key: "studio",
-    name: "Nocturne Studio",
+    name: "NOCT",
     role: "Workspace local-first de engenharia assistida por IA",
     status: "v1.0.2 · versão estável",
     description:
@@ -37,7 +37,7 @@ export const PROJECTS = [
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/nocturne-studio",
+        href: "https://github.com/gustavomfg/NOCT",
         type: "source",
       },
     ],
@@ -47,7 +47,7 @@ export const PROJECTS = [
   {
     id: "07",
     key: "portfolio",
-    name: "Portfolio",
+    name: "GMF",
     role: "Portfólio profissional",
     status: "Você está aqui",
     description:
@@ -63,7 +63,7 @@ export const PROJECTS = [
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/Portfolio",
+        href: "https://github.com/gustavomfg/GMF",
         type: "source",
       },
     ],
@@ -107,14 +107,14 @@ export const PROJECTS = [
   {
     id: "04",
     key: "greeter",
-    name: "Nocturne Greeter",
+    name: "UMBRA",
     role: "Tela de login Wayland para Linux",
     status: "Em uso diário no Arch Linux",
     description:
       "Greeter cinematográfico para sessões Wayland, construído com Quickshell, QML e GLSL e integrado ao greetd e ao PAM. Em uso diário no Arch Linux.",
     tags: ["QML", "Quickshell", "GLSL", "Linux"],
     image: "/nocturne-greeter/umbra-auth.webp",
-    imageAlt: "Tela de autenticação do Nocturne Greeter com um planeta e anéis orbitais em violeta sobre fundo preto.",
+    imageAlt: "Tela de autenticação do UMBRA com um planeta e anéis orbitais em violeta sobre fundo preto.",
     problem:
       "Substituir o gerenciador de login por uma interface própria sem abrir mão da autenticação real do sistema, da escolha de sessões e de uma recuperação segura.",
     highlights: [
@@ -126,7 +126,7 @@ export const PROJECTS = [
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/nocturne-greeter",
+        href: "https://github.com/gustavomfg/UMBRA",
         type: "source",
       },
     ],
@@ -136,14 +136,14 @@ export const PROJECTS = [
   {
     id: "05",
     key: "atlas",
-    name: "Nocturne Atlas",
+    name: "ATLS",
     role: "Mapa navegável do contexto de um projeto",
     status: "Fase inicial · protótipo",
     description:
       "Protótipo de um Project Space que conecta documentos, componentes, decisões, pull requests e releases em um mapa navegável, para entender como um projeto chegou ao estado atual.",
     tags: ["Next.js", "React", "TypeScript"],
     image: "/nocturne-atlas/project-graph.webp",
-    imageAlt: "Project Graph do Nocturne Atlas com regiões de Identidade e Checkout, artefatos conectados, painel de relações e linha do tempo.",
+    imageAlt: "Project Graph do ATLS com regiões de Identidade e Checkout, artefatos conectados, painel de relações e linha do tempo.",
     problem:
       "Reconstruir o contexto de um projeto (por que uma decisão foi tomada, que mudança alterou a arquitetura, em qual release ela chegou) quando esse conhecimento está espalhado entre repositórios, documentos e conversas.",
     highlights: [
@@ -159,7 +159,7 @@ export const PROJECTS = [
   {
     id: "06",
     key: "batpet",
-    name: "BatPet",
+    name: "BATTY",
     role: "Companheiro de desktop em Rust",
     status: "Experimental",
     description:
@@ -178,7 +178,7 @@ export const PROJECTS = [
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/My-Bat-Pet",
+        href: "https://github.com/gustavomfg/BATTY",
         type: "source",
       },
     ],
@@ -187,10 +187,10 @@ export const PROJECTS = [
   },
 ] as const satisfies readonly Project[];
 
-/** Reading order of the projects section; SysMon has its own showcase outside PROJECTS. */
+/** Reading order of the projects section; PULS has its own showcase outside PROJECTS. */
 export const PROJECT_CHAPTERS: readonly { id: string; name: string; anchor: string }[] = [
-  { id: "01", name: "Nocturne Studio", anchor: "projeto-studio" },
-  { id: "02", name: "SysMon", anchor: "sysmon" },
+  { id: "01", name: "NOCT", anchor: "projeto-studio" },
+  { id: "02", name: "PULS", anchor: "sysmon" },
   ...PROJECTS.filter((project) => project.key !== "studio" && project.key !== "portfolio").map((project) => ({
     id: project.id,
     name: project.name,

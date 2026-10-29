@@ -1,10 +1,10 @@
-> **Documentation for Nocturne Portfolio**
+> **Documentation for GMF**
 
-# 🌙 Nocturne Portfolio
+# 🌙 GMF
 
 > **A modern developer portfolio designed to present projects, experience and the Nocturne ecosystem.**
 
-Nocturne Portfolio is my personal portfolio website built with **Next.js**, focused on performance, accessibility and user experience.
+GMF is my personal portfolio website built with **Next.js**, focused on performance, accessibility and user experience.
 
 Beyond presenting my work, it serves as the public entry point to the **Nocturne ecosystem**, showcasing projects, technical skills and my approach to software engineering.
 

@@ -51,14 +51,14 @@ function buildCommands(batPetHidden: boolean): PaletteCommand[] {
         .filter((link) => link.type === "source")
         .map((link) => ({ name: project.name, href: link.href, tags: project.tags })),
     ),
-    { name: "SysMon", href: "https://github.com/gustavomfg/sysmon", tags: ["Rust", "Ratatui"] },
+    { name: "PULS", href: "https://github.com/gustavomfg/PULS", tags: ["Rust", "Ratatui"] },
   ];
 
   return [
     { id: "nav-inicio", group: "Navegar", label: "Início", icon: ArrowRight, keywords: ["topo", "home"], action: { kind: "anchor", target: "inicio" } },
     { id: "nav-projetos", group: "Navegar", label: "Projetos", icon: ArrowRight, keywords: ["trabalhos", "portfolio"], action: { kind: "anchor", target: "projetos" } },
-    { id: "nav-studio", group: "Navegar", label: "Nocturne Studio", hint: "Projeto principal", icon: ArrowRight, keywords: ["electron", "ia", "ai"], action: { kind: "anchor", target: "projeto-studio" } },
-    { id: "nav-sysmon", group: "Navegar", label: "SysMon", hint: "Monitor de sistema em Rust", icon: ArrowRight, keywords: ["rust", "terminal", "tui"], action: { kind: "anchor", target: "sysmon" } },
+    { id: "nav-studio", group: "Navegar", label: "NOCT", hint: "Projeto principal", icon: ArrowRight, keywords: ["electron", "ia", "ai"], action: { kind: "anchor", target: "projeto-studio" } },
+    { id: "nav-sysmon", group: "Navegar", label: "PULS", hint: "Monitor de sistema em Rust", icon: ArrowRight, keywords: ["rust", "terminal", "tui"], action: { kind: "anchor", target: "sysmon" } },
     { id: "nav-perfil", group: "Navegar", label: "Perfil", icon: ArrowRight, keywords: ["sobre", "formacao", "java"], action: { kind: "anchor", target: "perfil" } },
     { id: "nav-contato", group: "Navegar", label: "Contato", icon: ArrowRight, keywords: ["email", "falar"], action: { kind: "anchor", target: "contato" } },
     ...studies.map((project): PaletteCommand => ({
@@ -77,7 +77,7 @@ function buildCommands(batPetHidden: boolean): PaletteCommand[] {
     {
       id: "toggle-batpet",
       group: "Contato e ações",
-      label: batPetHidden ? "Chamar o BatPet de volta" : "Deixar o BatPet dormir",
+      label: batPetHidden ? "Chamar o BATTY de volta" : "Deixar o BATTY dormir",
       hint: batPetHidden ? "Ele volta a se pendurar no topo" : "Esconde o mascote do topo",
       icon: batPetHidden ? Sparkles : Moon,
       keywords: ["morcego", "bat", "mascote", "pet"],
@@ -204,7 +204,7 @@ export function CommandPalette() {
 
   useEffect(() => {
     console.info(
-      "%cGF%c Oi, dev curioso! O código deste portfólio é aberto: https://github.com/gustavomfg/Portfolio\nAperte Ctrl+K (ou ⌘K) para navegar pelo teclado.",
+      "%cGF%c Oi, dev curioso! O código deste portfólio é aberto: https://github.com/gustavomfg/GMF\nAperte Ctrl+K (ou ⌘K) para navegar pelo teclado.",
       "background:#9167ff;color:#fff;padding:2px 6px;border-radius:4px;font-weight:700",
       "color:#c6b3ff",
     );
@@ -238,7 +238,7 @@ export function CommandPalette() {
         break;
       case "batpet":
         setBatPetHidden(!batPetHidden);
-        setStatus(batPetHidden ? "O BatPet voltou para o topo da página." : "O BatPet foi dormir. Boa noite!");
+        setStatus(batPetHidden ? "O BATTY voltou para o topo da página." : "O BATTY foi dormir. Boa noite!");
         break;
       case "copy": {
         const fallback = `Não foi possível copiar. Endereço: ${action.value}`;

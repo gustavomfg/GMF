@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useShortcutLabel } from "@/hooks/use-shortcut-label";
 import { useBatPetHidden } from "@/lib/batpet-store";
 
-/** Frame order in public/batpet/sprite.png, extracted from the BatPet pose sheet. */
+/** Frame order in public/batpet/sprite.png, extracted from the BATTY pose sheet. */
 const POSES = {
   rest: 0,
   lookLeft: 1,
@@ -22,7 +22,7 @@ const LOOK_THRESHOLD = 26;
 const IDLE_AFTER_MS = 2600;
 const HINT_SESSION_KEY = "batpet:hint-shown";
 const SHORTCUT_HINT = "shortcut-hint";
-const HOVER_HINT = "BatPet · feito em Rust";
+const HOVER_HINT = "BATTY · feito em Rust";
 
 export function poseForPointer(dx: number, dy: number): Pose {
   const distance = Math.hypot(dx, dy);
@@ -35,7 +35,7 @@ export function poseForPointer(dx: number, dy: number): Pose {
 }
 
 /**
- * A live port of the BatPet desktop companion: it hangs from the header and
+ * A live port of the BATTY desktop companion: it hangs from the header and
  * reacts to the cursor with the same poses as the Rust/Bevy version.
  * Purely decorative — hidden from assistive tech and from touch-first layouts.
  */

@@ -6,7 +6,7 @@ import { CINEMATIC_QUERY, useMediaQuery } from "@/hooks/use-media-query";
 
 const WORKSPACE = {
   src: "/nocturne-studio/workspace-overview.png",
-  alt: "Workspace do Nocturne Studio com navegação, conversa de revisão, seletor de modelo e painel do agente",
+  alt: "Workspace do NOCT com navegação, conversa de revisão, seletor de modelo e painel do agente",
   width: 1440,
   height: 900,
 };

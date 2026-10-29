@@ -73,19 +73,19 @@ export const SYSMON_CAROUSEL_ITEMS: readonly SysmonCarouselItem[] = [
     image: "/sysmon/Sysmon.png",
     width: 1271,
     height: 681,
-    alt: "Interface completa do SysMon mostrando CPU, memória, GPU, rede, armazenamento, temperaturas, processos e contexto do sistema",
+    alt: "Interface completa do PULS mostrando CPU, memória, GPU, rede, armazenamento, temperaturas, processos e contexto do sistema",
   },
   {
     label: "02 / Pulse V2",
     title: "Visualização procedural em tempo real",
-    description: "Uma representação gráfica gerada pelo próprio SysMon para transformar atividade e métricas do sistema em uma superfície visual dinâmica.",
+    description: "Uma representação gráfica gerada pelo próprio PULS para transformar atividade e métricas do sistema em uma superfície visual dinâmica.",
     meta: "System Pulse · visualização procedural",
     image: "/sysmon/PulseV2.png",
     webp: "/sysmon/PulseV2.webp",
     avif: "/sysmon/PulseV2.avif",
     width: 1334,
     height: 749,
-    alt: "Visualização procedural Pulse V2 do SysMon com atividade gráfica gerada em tempo real",
+    alt: "Visualização procedural Pulse V2 do PULS com atividade gráfica gerada em tempo real",
   },
 ] as const;
 
@@ -317,7 +317,7 @@ function DepthCarousel({
         style={{ "--dc-perspective": `${perspective}px` } as CSSProperties}
         role="group"
         aria-roledescription="carousel"
-        aria-label="Evidências visuais do SysMon"
+        aria-label="Evidências visuais do PULS"
         tabIndex={0}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -407,10 +407,10 @@ export function SysmonDepthShowcase() {
       <div className="sysmon-project-header">
         <div className="sysmon-project-identity">
           <p className="project-role">Monitor de sistema</p>
-          <h3 id="sysmon-title">SysMon</h3>
+          <h3 id="sysmon-title">PULS</h3>
           <p>Monitor de sistema em Rust para telemetria de CPU, memória, GPU, rede, armazenamento, temperaturas e processos. A arquitetura separa coleta, interpretação e visualização para preservar contexto.</p>
           <p className="sysmon-stack">{SYSMON_EVIDENCE.stack.join(" · ")}</p>
-          <a className="studio-source-link" href="https://github.com/gustavomfg/sysmon" target="_blank" rel="noreferrer">
+          <a className="studio-source-link" href="https://github.com/gustavomfg/PULS" target="_blank" rel="noreferrer">
             <Code2 size={15} aria-hidden="true" /> Ver código-fonte
             <ArrowUpRight size={15} aria-hidden="true" />
           </a>
