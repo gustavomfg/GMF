@@ -4,6 +4,8 @@ export default defineConfig({
   testDir: "./e2e",
   outputDir: "/tmp/nocturne-portfolio-playwright-results",
   fullyParallel: true,
+  // WebGL scenes share the runner's CPU/GPU budget; give each scenario the full runner.
+  workers: process.env.CI ? 1 : undefined,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? "github" : "list",
