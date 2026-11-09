@@ -68,12 +68,12 @@ export const SYSMON_CAROUSEL_ITEMS: readonly SysmonCarouselItem[] = [
   {
     label: "01 / System Monitor",
     title: "Monitoramento do sistema em uma única interface",
-    description: "CPU, memória, GPU, rede, armazenamento, temperaturas e processos reunidos em uma visão operacional.",
+    description: "CPU, memória, GPU, rede, armazenamento, temperaturas e processos em uma visão operacional. A linha vital no cabeçalho bate no ritmo do System Pulse e diz o que está exigindo atenção.",
     meta: "Rust · Ratatui · Crossterm · Linux",
-    image: "/sysmon/Sysmon.png",
-    width: 1271,
-    height: 681,
-    alt: "Interface completa do PULS mostrando CPU, memória, GPU, rede, armazenamento, temperaturas, processos e contexto do sistema",
+    image: "/sysmon/dashboard.webp",
+    width: 1640,
+    height: 985,
+    alt: "Dashboard do PULS com a linha vital no cabeçalho, métricas de CPU, memória, GPU e rede, o System Pulse ao centro, temperaturas, processos e eventos recentes",
   },
   {
     label: "02 / Pulse V2",
@@ -408,7 +408,7 @@ export function SysmonDepthShowcase() {
         <div className="sysmon-project-identity">
           <p className="project-role">Monitor de sistema</p>
           <h3 id="sysmon-title">PULS</h3>
-          <p>Monitor de sistema em Rust para telemetria de CPU, memória, GPU, rede, armazenamento, temperaturas e processos. A arquitetura separa coleta, interpretação e visualização para preservar contexto.</p>
+          <p>Monitor de sistema em Rust para telemetria de CPU, memória, GPU, rede, armazenamento, temperaturas e processos. A arquitetura separa coleta, interpretação e visualização, e um narrador de eventos registra as mudanças de saúde que persistem.</p>
           <p className="sysmon-stack">{SYSMON_EVIDENCE.stack.join(" · ")}</p>
           <a className="studio-source-link" href="https://github.com/gustavomfg/PULS" target="_blank" rel="noreferrer">
             <Code2 size={15} aria-hidden="true" /> Ver código-fonte

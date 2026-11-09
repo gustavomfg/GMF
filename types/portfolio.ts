@@ -1,5 +1,5 @@
 export type ProjectAccent = "violet" | "blue" | "cyan";
-export type ProjectIconKey = "brain-circuit" | "panels-top-left" | "scan-search" | "radar" | "sparkles" | "lock-keyhole" | "waypoints";
+export type ProjectIconKey = "brain-circuit" | "panels-top-left" | "scan-search" | "radar" | "sparkles" | "lock-keyhole" | "waypoints" | "wrench" | "orbit" | "hand";
 
 export interface NavItem {
   label: string;

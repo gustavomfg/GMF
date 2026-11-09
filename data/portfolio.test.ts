@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { NAV_ITEMS, PROJECT_CHAPTERS, PROJECTS } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
@@ -34,11 +35,12 @@ describe("portfolio data", () => {
     });
   });
 
-  it("publishes the source links documented for the Nocturne projects", () => {
+  it("publishes the source links of the public repositories", () => {
     const expectedRepositories = {
       studio: "https://github.com/gustavomfg/NOCT",
-      ovra: "https://github.com/gustavomfg/ovra",
+      frx: "https://github.com/gustavomfg/FRX",
       greeter: "https://github.com/gustavomfg/UMBRA",
+      batpet: "https://github.com/gustavomfg/BATTY",
     } as const;
 
     for (const [projectKey, repository] of Object.entries(expectedRepositories)) {
@@ -52,11 +54,19 @@ describe("portfolio data", () => {
     }
   });
 
-  it("keeps the early-stage Atlas prototype without public links", () => {
-    const atlas = projects.find((project) => project.key === "atlas");
+  it("keeps projects with private or unpublished repositories without links", () => {
+    for (const projectKey of ["atlas", "saturn", "gesture"]) {
+      const project = projects.find((item) => item.key === projectKey);
 
-    expect(atlas).toBeDefined();
-    expect(atlas?.links).toBeUndefined();
+      expect(project).toBeDefined();
+      expect(project?.links).toBeUndefined();
+    }
+  });
+
+  it("points every project image at a file inside public", () => {
+    for (const project of projects) {
+      if (project.image) expect(existsSync(`public${project.image}`)).toBe(true);
+    }
   });
 
   it("indexes every displayed project chapter once, in reading order", () => {

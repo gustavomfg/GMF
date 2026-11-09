@@ -291,7 +291,7 @@ test("carousel permanece utilizável quando imagens falham", async ({ page }, te
   await expect(carousel.locator(".depth-carousel__img")).toHaveCount(2);
   await expect(carousel.locator(".depth-carousel__img").first()).toHaveAttribute(
     "alt",
-    /Interface completa do PULS/,
+    /Dashboard do PULS/,
   );
   await carousel.getByRole("button", { name: "Próxima evidência" }).click();
   await expect(carousel.locator(".depth-carousel__position")).toHaveText("02 / 02");

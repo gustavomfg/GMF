@@ -9,7 +9,7 @@ import VariableProximity from "@/components/react-bits/VariableProximity";
 import { HeroLanyardShell } from "@/components/sections/hero-lanyard-shell";
 import { PROJECT_CHAPTERS } from "@/data/portfolio";
 
-const CRAFT = ["aplicações web", "apps desktop", "ferramentas para Linux", "experiências em WebGL"];
+const CRAFT = ["aplicações web", "apps desktop", "ferramentas para Linux", "APIs em Java"];
 const STAR_COLORS = ["#c6b3ff", "#9167ff", "#5d8aff", "#f4f2f8"];
 
 export function HeroSection() {
