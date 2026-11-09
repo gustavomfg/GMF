@@ -38,8 +38,8 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - Seus principais interesses são arquitetura de software, backend, aplicações desktop e tecnologias web modernas.
 - TypeScript e JavaScript são linguagens de uso diário; Java é sua principal linguagem acadêmica; Python está em aprendizado; Rust tem evidência em projetos.
 - As tecnologias confirmadas incluem React, Node.js, REST APIs, Electron, HTML, CSS e SQLite, além das ferramentas de desenvolvimento registradas em `IDENTITY.md`.
-- NOCT e PULS são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. OVRA, UMBRA, ATLS e BATTY também devem ser apresentados de acordo com suas evidências. O ATLS está em fase inicial e o repositório é privado: aparece sem link até o autor decidir publicá-lo.
-- Java deve ganhar evidência progressivamente. O futuro projeto Full Stack com Java e Spring Boot só deve ser apresentado como concluído ou público quando houver evidência verificável de que está pronto.
+- NOCT e PULS são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. FRX, Saturn, UMBRA, ATLS, BATTY e Gesture Control também devem ser apresentados de acordo com suas evidências. ATLS e Saturn têm repositório privado e o Gesture Control ainda não foi publicado: aparecem sem link até o autor decidir publicá-los.
+- Java tem evidência no Saturn (Java puro) e na API do ATLS (Spring Boot e PostgreSQL). O ATLS está em desenvolvimento e só deve ser apresentado como concluído ou público quando houver evidência verificável de que está pronto.
 - Não inventar ou exagerar experiência, métricas, números, tecnologias, resultados, conquistas, responsabilidades ou maturidade profissional.
 - Não apresentar Gustavo como desenvolvedor sênior. A comunicação deve transmitir competência, curiosidade técnica, capacidade de construir software real e potencial de crescimento.
 - Em caso de conflito ou incerteza, `IDENTITY.md`, o currículo confirmado e os repositórios públicos são as fontes de verdade; deve-se perguntar antes de assumir.
@@ -64,9 +64,11 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - `README.md`: arquitetura, stack, comandos e práticas de qualidade deste projeto.
 - Repositório público do portfólio: https://github.com/gustavomfg/GMF
 - NOCT: https://github.com/gustavomfg/NOCT
-- OVRA: https://github.com/gustavomfg/ovra
+- FRX: https://github.com/gustavomfg/FRX
+- Saturn: repositório privado (sem link público)
 - UMBRA: https://github.com/gustavomfg/UMBRA
-- ATLS: repositório privado, em fase inicial (sem link público)
+- ATLS: repositório privado, em desenvolvimento (sem link público)
+- Gesture Control: repositório local, ainda não publicado
 - PULS: https://github.com/gustavomfg/PULS
 - BATTY: https://github.com/gustavomfg/BATTY
 - Perfil no GitHub: https://github.com/gustavomfg

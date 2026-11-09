@@ -8,10 +8,10 @@ export const NAV_ITEMS = [
 
 export const TECHNICAL_PROFILE = [
   { label: "Formação", value: "ADS · UniFil (2025–2028)" },
-  { label: "Direção principal", value: "Java em aprofundamento contínuo" },
-  { label: "Uso diário", value: "TypeScript e JavaScript" },
-  { label: "Construção", value: "React, Node.js e Electron" },
-  { label: "Em desenvolvimento", value: "Rust no PULS e no BATTY · QML no Greeter" },
+  { label: "Java", value: "Saturn em Java puro · API do ATLS em Spring Boot" },
+  { label: "TypeScript", value: "NOCT, FRX, ATLS e este portfólio" },
+  { label: "Rust", value: "PULS, BATTY e o motor do FRX" },
+  { label: "Python · QML", value: "Gesture Control em Python · UMBRA em QML e GLSL" },
   { label: "Certificação", value: "Fundamentos do GitHub · DataCamp (2026)" },
 ] as const satisfies readonly TechnicalProfileItem[];
 
@@ -21,18 +21,19 @@ export const PROJECTS = [
     key: "studio",
     name: "NOCT",
     role: "Workspace local-first de engenharia assistida por IA",
-    status: "v1.0.2 · versão estável",
+    status: "v1.0.5 · versão estável",
     description:
-      "Workspace local-first para manter projeto, documentação, conhecimento, arquitetura e conversas conectados enquanto a IA apoia o trabalho de engenharia.",
+      "Workspace desktop local-first para entender, revisar e evoluir projetos reais com a IA que você escolher, mantendo projeto, conversas, achados e conhecimento conectados.",
     tags: ["Electron", "React", "TypeScript", "SQLite"],
     problem:
       "Permitir que ferramentas de IA trabalhem com o contexto do projeto em vez de prompts isolados, mantendo conhecimento, decisões e conversas conectados no workspace.",
     highlights: [
-      "Local Second Brain e Awareness System contextual",
-      "Review Mode com revisão humana antes da aplicação de alterações",
-      "Secure Provider System, Credential Vault e Typed IPC",
-      "Arquitetura Electron com isolamento e Provider Abstraction Layer",
-      "Packaging Pipeline e validação automatizada por CI",
+      "Review, Build e Docs Mode rodam com o modelo escolhido no workspace, sem depender de um fornecedor de IA, CLI ou assinatura",
+      "Review Mode somente leitura, com sugestões baseadas em evidências e revisão humana antes de qualquer alteração",
+      "Build Mode com aprovação de comandos, diff visível e rollback protegido",
+      "Segundo Cérebro local e Awareness que explica o contexto usado em cada execução",
+      "Credential Vault, IPC tipado e renderer isolado na arquitetura Electron",
+      "Pacotes para Windows, Linux e macOS validados por CI",
     ],
     links: [
       {
@@ -45,7 +46,7 @@ export const PROJECTS = [
     accent: "violet",
   },
   {
-    id: "07",
+    id: "09",
     key: "portfolio",
     name: "GMF",
     role: "Portfólio profissional",
@@ -58,7 +59,7 @@ export const PROJECTS = [
     highlights: [
       "Interface responsiva e acessível",
       "Conteúdo centralizado e fácil de atualizar",
-      "Conteúdo orientado à minha identidade profissional",
+      "Testes de componentes, navegação e acessibilidade com Vitest, Playwright e axe",
     ],
     links: [
       {
@@ -72,46 +73,67 @@ export const PROJECTS = [
   },
   {
     id: "03",
-    key: "ovra",
-    name: "OVRA",
-    role: "Laboratório visual de creative development",
-    status: "Demo ao vivo",
+    key: "frx",
+    name: "FRX",
+    role: "Conserto de hardware em laptops Linux",
+    status: "v0.5 · versão inicial",
     description:
-      "Laboratório interativo de luz, matéria e ruído: doze espécimes renderizados em tempo real com shaders GLSL, organizados em cinco famílias e abertos à experimentação.",
-    tags: ["React", "WebGL2", "GLSL", "GSAP"],
-    image: "/ovra/ovra-desktop.webp",
-    imageAlt: "Página inicial do OVRA com a tipografia sobre uma simulação de fluido em tons de vermelho.",
+      "Hardware Fixer: app desktop que identifica o modelo do laptop, busca na Arch Wiki as correções de Wi-Fi, áudio, touchpad, suspensão e firmware e mostra a mudança exata em /etc antes de aplicar, com backup e desfazer.",
+    tags: ["Tauri", "Rust", "React", "TypeScript"],
+    image: "/frx/hardware-dashboard.webp",
+    imageAlt: "Hardware Fixer em um ThinkPad X1 Carbon mostrando os cinco sintomas e uma correção de áudio da Arch Wiki com o botão Aplicar correção (dados de exemplo).",
     problem:
-      "Investigar como shaders, movimento e tipografia podem formar uma experiência navegável, em que cada efeito pode ser observado, ajustado e comparado.",
+      "Aplicar no próprio laptop uma correção documentada na Arch Wiki sem copiar comandos às cegas: saber o que muda no sistema, por quê, e conseguir voltar atrás.",
     highlights: [
-      "Éter interativo na abertura: simulação de fluido que responde ao cursor",
-      "Catálogo com prévias WebGL vivas e filtros por família",
-      "Câmara de observação com quatro parâmetros ajustáveis por espécime e cópia dos valores em JSON",
-      "Composição responsiva, rolagem suave com Lenis e transições com GSAP e ScrollTrigger",
+      "Identificação do modelo pelo DMI, sem privilégios e sem ler número de série ou UUID",
+      "Busca na Arch Wiki pela API MediaWiki, aceitando a página só quando os números do modelo batem",
+      "Parser estrito: reconhece apenas opções de módulo e parâmetros do kernel inequívocos",
+      "O app nunca roda sudo: prepara o arquivo, mostra o comando e confere o hash do resultado em /etc",
+      "Escrita restrita a uma allowlist fechada, com backup e desfazer para cada correção",
+      "Pacotes AppImage, .deb e .rpm publicados por CI, além de um pacote nativo para Arch",
     ],
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/ovra",
+        href: "https://github.com/gustavomfg/FRX",
         type: "source",
       },
-      {
-        label: "Abrir experiência",
-        href: "https://gustavomfg.github.io/ovra/",
-        type: "demo",
-      },
     ],
-    icon: "sparkles",
+    icon: "wrench",
     accent: "cyan",
   },
   {
     id: "04",
+    key: "saturn",
+    name: "Saturn",
+    role: "Simulação gravitacional em Java",
+    status: "Java puro · sem dependências",
+    description:
+      "Simulação de Saturno, das seis maiores luas e dos anéis com dados reais de massa, raio e distância. Feita em Java com Swing e Java2D, sem bibliotecas externas.",
+    tags: ["Java", "Swing", "Java2D", "Simulação"],
+    image: "/saturn/vista-padrao.webp",
+    imageAlt: "Saturno inclinado com a sombra dos anéis, as luas Encélado e Mimas em órbita e o painel com os dados do planeta.",
+    problem:
+      "Construir do zero, em Java, a física e o renderizador de uma simulação: manter as órbitas estáveis por muito tempo simulado e desenhar planeta e anéis por pixel em tempo real.",
+    highlights: [
+      "Gravitação N-corpos com integrador leapfrog, que conserva a energia ao longo da simulação",
+      "16.384 partículas de anel que mostram onde uma lua perturba a órbita original",
+      "Ray tracing por pixel do planeta e dos anéis, com sombras nos dois sentidos",
+      "Perfil real dos anéis, com a Divisão de Cassini e as falhas de Encke e Keeler, e rotação kepleriana",
+      "Física e renderização em paralelo, com testes automáticos de física e de desempenho",
+      "Câmera com zoom, inclinação e foco em um corpo; o botão direito cria uma lua nova",
+    ],
+    icon: "orbit",
+    accent: "blue",
+  },
+  {
+    id: "05",
     key: "greeter",
     name: "UMBRA",
     role: "Tela de login Wayland para Linux",
-    status: "Em uso diário no Arch Linux",
+    status: "v1.0.0 · em uso diário",
     description:
-      "Greeter cinematográfico para sessões Wayland, construído com Quickshell, QML e GLSL e integrado ao greetd e ao PAM. Em uso diário no Arch Linux.",
+      "Greeter cinematográfico para sessões Wayland, construído com Quickshell, QML e GLSL e integrado ao greetd e ao PAM. Em uso diário no meu Arch Linux.",
     tags: ["QML", "Quickshell", "GLSL", "Linux"],
     image: "/nocturne-greeter/umbra-auth.webp",
     imageAlt: "Tela de autenticação do UMBRA com um planeta e anéis orbitais em violeta sobre fundo preto.",
@@ -121,6 +143,8 @@ export const PROJECTS = [
       "Autenticação real pelo greetd e pelo PAM da distribuição",
       "Seleção de usuários e de sessões Wayland instaladas, com memória da última escolha",
       "Shader orbital, transição animada para a sessão e navegação completa por teclado",
+      "Indicadores de rede e de áudio visíveis antes do login, sem simular estado",
+      "Recuperação por login em modo texto, testada em máquina virtual",
       "Pacote Arch Linux com hooks do pacman, preview na sessão atual e harness Wayland isolado",
     ],
     links: [
@@ -134,45 +158,47 @@ export const PROJECTS = [
     accent: "violet",
   },
   {
-    id: "05",
+    id: "06",
     key: "atlas",
     name: "ATLS",
     role: "Mapa navegável do contexto de um projeto",
-    status: "Fase inicial · protótipo",
+    status: "Em desenvolvimento · full stack",
     description:
-      "Protótipo de um Project Space que conecta documentos, componentes, decisões, pull requests e releases em um mapa navegável, para entender como um projeto chegou ao estado atual.",
-    tags: ["Next.js", "React", "TypeScript"],
-    image: "/nocturne-atlas/project-graph.webp",
-    imageAlt: "Project Graph do ATLS com regiões de Identidade e Checkout, artefatos conectados, painel de relações e linha do tempo.",
+      "Project Space que conecta documentos, componentes, decisões, pull requests e releases em um mapa navegável. O frontend em Next.js consome uma API em Java com Spring Boot e PostgreSQL.",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Next.js"],
+    image: "/atls/project-graph.webp",
+    imageAlt: "Project Graph do ATLS em pixel art, com o Checkout Service em foco, suas relações, o Inspector ao lado e a linha do tempo na base.",
     problem:
       "Reconstruir o contexto de um projeto (por que uma decisão foi tomada, que mudança alterou a arquitetura, em qual release ela chegou) quando esse conhecimento está espalhado entre repositórios, documentos e conversas.",
     highlights: [
-      "Project Graph com regiões, filtros por tipo e recorte de conexões ao redor do foco",
-      "Linha do tempo que redesenha o mapa do primeiro dia até hoje",
-      "Trilhas guiadas que respondem a uma pergunta, passo a passo",
-      "Foco compartilhável pela URL, navegação por teclado e suporte a movimento reduzido",
-      "Dados demonstrativos isolados em um único índice, preparado para receber a futura API em Java",
+      "API em Java 21 e Spring Boot com PostgreSQL, organizada em pacotes por domínio",
+      "Login com GitHub liberado só para contas aprovadas por um administrador",
+      "Sincronização de pull requests e releases do GitHub em modo de leitura",
+      "Project Graph com regiões, filtros por tipo e uma linha do tempo que redesenha o mapa",
+      "Trilhas guiadas, foco compartilhável pela URL e navegação por teclado",
+      "Testes unitários e de ponta a ponta com um servidor OAuth falso do GitHub",
     ],
     icon: "waypoints",
     accent: "blue",
   },
   {
-    id: "06",
+    id: "07",
     key: "batpet",
     name: "BATTY",
     role: "Companheiro de desktop em Rust",
     status: "Experimental",
     description:
-      "Mascote de desktop em pixel-art que reage à atenção e à proximidade do cursor, com um ciclo experimental de voo entre poleiros.",
+      "Mascote em pixel-art que só existe enquanto é chamado no terminal: lê sinais da pasta atual, fala, aparece por alguns segundos e sai. Reage ao cursor e tem um ciclo de voo entre poleiros.",
     image: "/batpet/poses.png",
     imageAlt: "Morcego em pixel-art em estados de repouso, atenção e reação ao cursor.",
     tags: ["Rust", "Bevy", "Desktop"],
     problem:
       "Explorar animação e character acting responsivos em um companheiro de desktop sem perder a identidade visual em pixel-art.",
     highlights: [
+      "Ativação pelo terminal, sem autostart, serviço ou processo de fundo",
+      "Falas escolhidas por pontuação a partir do repositório git e da hora",
       "Olhar e postura reagem à posição e à proximidade do cursor",
-      "Ciclo de voo com estados de decolagem, voo, retorno e pouso",
-      "Habitat experimental com múltiplos poleiros",
+      "Ciclo de voo com decolagem, voo, retorno e pouso, guiado por aceleração limitada",
       "Textura original preservada e movimentos quantizados na grade pixel-art",
     ],
     links: [
@@ -184,6 +210,28 @@ export const PROJECTS = [
     ],
     icon: "radar",
     accent: "violet",
+  },
+  {
+    id: "08",
+    key: "gesture",
+    name: "Gesture Control",
+    role: "Controle do computador com as mãos pela webcam",
+    status: "Protótipo",
+    description:
+      "Protótipo em Python que usa a webcam e o MediaPipe para mover o cursor, clicar, rolar, trocar de workspace no Hyprland e digitar em um teclado virtual com gestos das mãos.",
+    tags: ["Python", "MediaPipe", "Wayland", "Hyprland"],
+    problem:
+      "Transformar a posição de 21 pontos da mão em ações confiáveis no Wayland, sem disparar cliques ou teclas por acidente.",
+    highlights: [
+      "Mouse e teclado virtuais pelo /dev/uinput, funcionando em Wayland",
+      "Pinça para clicar e arrastar, dois dedos para rolar e deslize de mão aberta para trocar de workspace",
+      "Teclado QWERTY com as duas mãos e dois modos de digitação: juntar os dedos ou esperar sobre a tecla",
+      "Começa desarmado: nada é enviado ao sistema antes da confirmação",
+      "Filtro de movimento e rastreio que mantém cada mão identificada",
+      "Testes unitários para gestos, filtro, rastreio, teclado e integração com o Hyprland",
+    ],
+    icon: "hand",
+    accent: "cyan",
   },
 ] as const satisfies readonly Project[];
 
@@ -204,18 +252,21 @@ export const STACK = [
   "Next.js",
   "Node.js",
   "Electron",
+  "Tauri",
   "Java",
+  "Spring Boot",
   "Rust",
   "Python",
+  "PostgreSQL",
   "SQLite",
-  "WebGL2 · GLSL",
-  "QML",
+  "QML · GLSL",
   "Linux",
 ] as const;
 
 export const NOCTURNE_STUDIO_EVIDENCE = {
-  version: "v1.0.2",
+  version: "v1.0.5",
   keyEvidence: [
+    "Review, Build e Docs Mode com o modelo escolhido no workspace, sem depender de fornecedor",
     "Workspace Memory, Local Second Brain e Awareness explicável por execução",
     "Review Mode para arquitetura, segurança, testes, performance, documentação e manutenibilidade",
     "Secure Provider System, Credential Vault e Typed IPC",
@@ -240,6 +291,7 @@ export const NOCTURNE_STUDIO_EVIDENCE = {
 
 export const SYSMON_EVIDENCE = {
   stack: ["Rust", "Ratatui", "Crossterm", "Linux"],
+  version: "v0.1.3",
   telemetry: ["CPU", "memória", "GPU", "rede", "armazenamento", "temperaturas", "processos"],
   architecture: [
     "Históricos limitados",

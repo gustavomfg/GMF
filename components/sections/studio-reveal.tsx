@@ -6,7 +6,7 @@ import { CINEMATIC_QUERY, useMediaQuery } from "@/hooks/use-media-query";
 
 const WORKSPACE = {
   src: "/nocturne-studio/workspace-overview.png",
-  alt: "Workspace do NOCT com navegação, conversa de revisão, seletor de modelo e painel do agente",
+  alt: "Workspace do NOCT com a lista de tarefas, a conversa, o pedido com os modos Implementar, Analisar e Documentar e o painel de acompanhamento",
   width: 1440,
   height: 900,
 };
@@ -42,7 +42,7 @@ export function StudioReveal({ version }: { version: string }) {
     >
       <div className="studio-reveal-caption">
         <span>Projeto principal · {version}</span>
-        <p>O workspace real, com dados de demonstração: conversa, modo de revisão e o painel do agente lado a lado.</p>
+        <p>O workspace real, com dados de demonstração: a conversa, o pedido com os três modos e o painel de acompanhamento lado a lado.</p>
       </div>
     </ScrollExpand>
   );

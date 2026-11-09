@@ -100,7 +100,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         <section className="project-deck-section" aria-labelledby="other-projects-title">
           <div className="index-heading section-shell">
             <h3 id="other-projects-title">Outros projetos</h3>
-            <p>Experimentos visuais, ferramentas para Linux e o que ainda está nascendo</p>
+            <p>Ferramentas para Linux, uma simulação em Java, uma aplicação full stack e protótipos em andamento</p>
           </div>
           <ProjectStack entries={stackEntries} />
         </section>

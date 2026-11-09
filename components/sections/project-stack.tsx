@@ -91,7 +91,7 @@ function ProjectSheet({ project, index }: { project: Project; index: number }) {
               <Code2 size={14} aria-hidden="true" /> Código
             </a>
           ) : (
-            <span className="project-sheet-note">Código publicado quando estiver pronto</span>
+            <span className="project-sheet-note">Código ainda não publicado</span>
           )}
         </div>
       </div>

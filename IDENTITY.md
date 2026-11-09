@@ -101,6 +101,7 @@ Primary technologies:
 
 - Node.js
 - REST APIs
+- Java with Spring Boot (ATLS API)
 
 ---
 
@@ -111,6 +112,11 @@ Creating cross-platform desktop applications using web technologies while follow
 Primary technology:
 
 - Electron
+
+Also used in projects:
+
+- Tauri (FRX)
+- Java Swing/Java2D (Saturn)
 
 ---
 
@@ -131,17 +137,19 @@ Primary project language:
 
 Currently learning:
 
-- Python
+- Python (Gesture Control)
 
 Used in projects:
 
-- Rust
+- Rust (PULS, BATTY, FRX)
+- Java (Saturn, ATLS API)
 
 ---
 
 ## Database
 
 - SQLite
+- PostgreSQL (ATLS API)
 
 ---
 
@@ -186,13 +194,19 @@ Main areas explored:
 
 ---
 
-## OVRA
+## FRX (Hardware Fixer)
 
-Experimental creative development lab in WebGL2, GLSL, GSAP and React.
+Desktop app that fixes laptop hardware on Linux (Wi-Fi, audio, touchpad, suspend and firmware). It identifies the model through DMI, looks up fixes on the Arch Wiki and previews the exact change in `/etc`, with backup and undo. Built with Tauri 2, Rust, React and TypeScript. The app never runs `sudo`.
 
-Twelve real-time shader specimens in five families, with an interactive fluid opening, a live catalogue and an observation chamber with adjustable parameters.
+Initial release (0.5), with AppImage, .deb and .rpm packages.
 
-Live: https://gustavomfg.github.io/ovra/
+---
+
+## Saturn
+
+Gravitational simulation of Saturn, its six largest moons and its rings in plain Java (Swing/Java2D), with no dependencies: N-body leapfrog integrator, 16,384 ring particles and a per-pixel ray-traced renderer.
+
+Private repository; no public link yet. It replaced the former OVRA shader lab, which is no longer published.
 
 ---
 
@@ -206,7 +220,7 @@ Packaged for Arch Linux and in daily use on the author's system.
 
 ## ATLS
 
-Early-stage prototype of a Project Space that connects documents, components, decisions, pull requests and releases in a navigable map, with a context timeline and guided trails. Frontend in Next.js, React and TypeScript with demo data; a Java API is planned for the backend.
+Project Space that connects documents, components, decisions, pull requests and releases in a navigable map, with a context timeline and guided trails. Frontend in Next.js, React and TypeScript; backend API in Java 21 and Spring Boot with PostgreSQL, GitHub sign-in restricted to approved accounts and read-only GitHub synchronization. In development.
 
 Private repository; no public link yet.
 
@@ -214,13 +228,21 @@ Private repository; no public link yet.
 
 ## PULS
 
-Rust terminal system monitor for CPU, memory, GPU, network, storage, temperatures and processes.
+Rust terminal system monitor for CPU, memory, GPU, network, storage, temperatures and processes, with a vital line that follows the System Pulse and an event narrator for persistent health changes.
 
 ---
 
 ## BATTY
 
-Experimental Rust desktop companion in pixel-art with cursor-reactive character animation and a flight cycle between perches.
+Experimental Rust desktop companion in pixel-art with cursor-reactive character animation and a flight cycle between perches. The `batty` binary is activated from the terminal and exits by itself; there is no background process.
+
+---
+
+## Gesture Control
+
+Python prototype that controls the computer with hand gestures through the webcam (MediaPipe, virtual mouse and keyboard through `/dev/uinput`, for Wayland/Hyprland).
+
+Local repository; no public link yet.
 
 ---
 
@@ -335,9 +357,9 @@ NOCT
 
 https://github.com/gustavomfg/NOCT
 
-OVRA
+FRX
 
-https://github.com/gustavomfg/ovra
+https://github.com/gustavomfg/FRX
 
 UMBRA
 
