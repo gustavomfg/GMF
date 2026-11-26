@@ -26,7 +26,7 @@ test("navegação, diálogo e acessibilidade no desktop", async ({ page }, testI
 
   await expect(page.getByRole("main")).toHaveCount(1);
   await expect(page).toHaveTitle(
-    "Gustavo Maquias — Desenvolvedor de Software",
+    "Gustavo Maquias — Desenvolvedor Rust e Java",
   );
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
@@ -85,7 +85,7 @@ test("navegação, diálogo e acessibilidade no desktop", async ({ page }, testI
     .toHaveAttribute("href", "/curriculo-gustavo-maquias.pdf");
   const studioVersion = page.locator(".studio-feature-heading > span").nth(1);
   await expect(studioVersion).toBeVisible();
-  await expect(studioVersion).toHaveText(/^v\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/i);
+  await expect(studioVersion).toHaveText(/Rust/);
   await expect(page.getByRole("heading", { name: "PULS", exact: true })).toBeVisible();
 
   const projectTrigger = page.locator(".project-sheet").first().getByRole("button", {

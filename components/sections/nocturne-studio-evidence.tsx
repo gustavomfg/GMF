@@ -4,68 +4,35 @@ import { useState } from "react";
 import Image from "next/image";
 
 interface NocturneStudioEvidenceItem {
-  id: "workspace" | "review" | "health" | "providers";
-  index: string;
+  id: "dark" | "light";
   label: string;
   title: string;
   description: string;
   src: string;
   alt: string;
-  width: number;
-  height: number;
-  sizes: string;
 }
 
 const EVIDENCE_ITEMS: readonly NocturneStudioEvidenceItem[] = [
   {
-    id: "workspace",
-    index: "01",
-    label: "Workspace",
-    title: "Projeto, conversa e agente no mesmo ambiente",
-    description: "O workspace mantém contexto, execução e acompanhamento do agente dentro do mesmo fluxo.",
-    src: "/nocturne-studio/workspace-overview.png",
-    alt: "Workspace do NOCT com a lista de tarefas, a conversa, o pedido com os modos Implementar, Analisar e Documentar e o painel de acompanhamento",
-    width: 1440,
-    height: 900,
-    sizes: "(max-width: 700px) calc(100vw - 32px), min(1240px, calc(100vw - 56px))",
+    id: "dark",
+    label: "Tema escuro",
+    title: "Revisar: perguntas sobre o projeto",
+    description: "O chat responde com o contexto do projeto e mostra a resposta em Markdown, sem HTML, enquanto ela chega. Salvar guarda a resposta em uma conversa.",
+    src: "/noct/review-dark.webp",
+    alt: "NOCT no modo Revisar, tema escuro: a lista de projetos, uma pergunta sobre o projeto e a resposta em Markdown com um trecho de código em Rust",
   },
   {
-    id: "review",
-    index: "02",
-    label: "Revisão",
-    title: "Sugestões fundamentadas em evidências",
-    description: "Cada revisão pode reunir origem, arquivos afetados, histórico, benefícios esperados e uma solução proposta antes da aplicação.",
-    src: "/nocturne-studio/suggestion-detail.png",
-    alt: "Detalhe de uma sugestão do NOCT com evidências, proveniência, histórico, arquivos afetados e solução proposta",
-    width: 1194,
-    height: 1013,
-    sizes: "(max-width: 700px) calc(100vw - 32px), 780px",
-  },
-  {
-    id: "health",
-    index: "03",
-    label: "Saúde do projeto",
-    title: "Análise técnica por dimensão",
-    description: "Arquitetura, segurança, testes, performance, manutenção e documentação organizadas em uma leitura única do projeto.",
-    src: "/nocturne-studio/suggestions.png",
-    alt: "Painel do NOCT mostrando a saúde do projeto e sugestões organizadas por dimensão técnica",
-    width: 676,
-    height: 1015,
-    sizes: "(max-width: 700px) calc(100vw - 32px), 420px",
-  },
-  {
-    id: "providers",
-    index: "04",
-    label: "Provedores",
-    title: "IA sem dependência de um único acesso",
-    description: "O NOCT conecta APIs como Gemini, OpenRouter, DeepSeek e Groq, runtimes locais e endpoints próprios, sem depender de um fornecedor.",
-    src: "/nocturne-studio/ai-providers.png",
-    alt: "Configurações de IA do NOCT com as opções Google Gemini, OpenRouter, DeepSeek e Groq",
-    width: 1000,
-    height: 760,
-    sizes: "(max-width: 700px) calc(100vw - 32px), 560px",
+    id: "light",
+    label: "Tema claro",
+    title: "Camada de vidro e dois temas",
+    description: "A mesma tela no tema claro. O modelo escolhido e o estado da chave no cofre ficam visíveis na barra lateral, sem expor a chave.",
+    src: "/noct/review-light.webp",
+    alt: "NOCT no modo Revisar, tema claro, com a camada de vidro, a mesma pergunta e a resposta em Markdown",
   },
 ] as const;
+
+const WIDTH = 1440;
+const HEIGHT = 900;
 
 export function NocturneStudioEvidence() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,7 +42,7 @@ export function NocturneStudioEvidence() {
     <section className="studio-gallery" aria-label="Evidências visuais do NOCT">
       <figure className="studio-gallery-main">
         <div className="studio-gallery-image">
-          <Image src={item.src} alt={item.alt} width={item.width} height={item.height}
+          <Image src={item.src} alt={item.alt} width={WIDTH} height={HEIGHT}
             sizes="(max-width: 700px) calc(100vw - 40px), 1120px" loading="lazy" draggable={false} />
         </div>
         <figcaption aria-live="polite" aria-atomic="true">
@@ -88,7 +55,7 @@ export function NocturneStudioEvidence() {
           <button type="button" key={evidence.id} aria-pressed={activeIndex === index}
             onClick={() => setActiveIndex(index)} aria-label={`Mostrar ${evidence.label}`}>
             <span className="studio-gallery-preview">
-              <Image src={evidence.src} alt="" width={evidence.width} height={evidence.height}
+              <Image src={evidence.src} alt="" width={WIDTH} height={HEIGHT}
                 sizes="(max-width: 700px) 80px, 240px" loading="lazy" draggable={false} />
             </span>
             <span>{evidence.label}</span>

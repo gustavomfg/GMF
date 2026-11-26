@@ -8,10 +8,10 @@ export const NAV_ITEMS = [
 
 export const TECHNICAL_PROFILE = [
   { label: "Formação", value: "ADS · UniFil (2025–2028)" },
+  { label: "Rust", value: "NOCT, PULS e o motor do FRX" },
   { label: "Java", value: "Saturn em Java puro · API do ATLS em Spring Boot" },
-  { label: "TypeScript", value: "NOCT, FRX, ATLS e este portfólio" },
-  { label: "Rust", value: "PULS, BATTY e o motor do FRX" },
-  { label: "Python · QML", value: "Gesture Control em Python · UMBRA em QML e GLSL" },
+  { label: "TypeScript", value: "Frontend do ATLS, interface do FRX e este portfólio" },
+  { label: "Linux", value: "UMBRA em QML e GLSL, integrado ao greetd e ao PAM" },
   { label: "Certificação", value: "Fundamentos do GitHub · DataCamp (2026)" },
 ] as const satisfies readonly TechnicalProfileItem[];
 
@@ -21,19 +21,19 @@ export const PROJECTS = [
     key: "studio",
     name: "NOCT",
     role: "Workspace local-first de engenharia assistida por IA",
-    status: "v1.0.5 · versão estável",
+    status: "Reescrita em Rust · em desenvolvimento",
     description:
-      "Workspace desktop local-first para entender, revisar e evoluir projetos reais com a IA que você escolher, mantendo projeto, conversas, achados e conhecimento conectados.",
-    tags: ["Electron", "React", "TypeScript", "SQLite"],
+      "Workspace desktop para entender, revisar e evoluir projetos com o modelo de IA que você escolher. Depois de chegar à v1.0.5 em Electron, foi reescrito em Rust: shell Tauri 2, persistência em SQLite e interface em Leptos compilada para WebAssembly.",
+    tags: ["Rust", "Tauri 2", "Leptos", "SQLite"],
     problem:
-      "Permitir que ferramentas de IA trabalhem com o contexto do projeto em vez de prompts isolados, mantendo conhecimento, decisões e conversas conectados no workspace.",
+      "Permitir que a IA trabalhe com o contexto real do projeto em vez de prompts isolados, sem que nada mude nos arquivos sem a aprovação de quem desenvolve.",
     highlights: [
-      "Review, Build e Docs Mode rodam com o modelo escolhido no workspace, sem depender de um fornecedor de IA, CLI ou assinatura",
-      "Review Mode somente leitura, com sugestões baseadas em evidências e revisão humana antes de qualquer alteração",
-      "Build Mode com aprovação de comandos, diff visível e rollback protegido",
-      "Segundo Cérebro local e Awareness que explica o contexto usado em cada execução",
-      "Credential Vault, IPC tipado e renderer isolado na arquitetura Electron",
-      "Pacotes para Windows, Linux e macOS validados por CI",
+      "Workspace Cargo com seis crates: shell, contratos do produto, SQLite, cofre de credenciais, worker de rollback e interface",
+      "SQLite com 32 migrações, backups, snapshots de recuperação e escrita atômica",
+      "Chave do provedor em um cofre cifrado, com a chave-mestra no repositório de credenciais do sistema operacional",
+      "Transporte só por HTTPS, sem redirecionamentos, com checagem de cada endereço resolvido e limites de tamanho e tempo",
+      "Mudanças propostas pela IA esperam em Construir ou Documentar até serem aprovadas uma a uma, com desfazer",
+      "CI em Linux, Windows e macOS, com cargo deny, cargo audit e mais de 800 testes em Rust",
     ],
     links: [
       {
@@ -42,34 +42,7 @@ export const PROJECTS = [
         type: "source",
       },
     ],
-    icon: "brain-circuit",
     accent: "violet",
-  },
-  {
-    id: "09",
-    key: "portfolio",
-    name: "GMF",
-    role: "Portfólio profissional",
-    status: "Você está aqui",
-    description:
-      "Meu portfólio pessoal, criado para apresentar minha trajetória, minhas competências e a evolução dos projetos que desenvolvo.",
-    tags: ["Next.js", "React", "TypeScript"],
-    problem:
-      "Comunicar quem sou como desenvolvedor e demonstrar, com clareza, o conhecimento técnico que venho construindo na prática.",
-    highlights: [
-      "Interface responsiva e acessível",
-      "Conteúdo centralizado e fácil de atualizar",
-      "Testes de componentes, navegação e acessibilidade com Vitest, Playwright e axe",
-    ],
-    links: [
-      {
-        label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/GMF",
-        type: "source",
-      },
-    ],
-    icon: "panels-top-left",
-    accent: "blue",
   },
   {
     id: "03",
@@ -99,66 +72,10 @@ export const PROJECTS = [
         type: "source",
       },
     ],
-    icon: "wrench",
     accent: "cyan",
   },
   {
     id: "04",
-    key: "saturn",
-    name: "Saturn",
-    role: "Simulação gravitacional em Java",
-    status: "Java puro · sem dependências",
-    description:
-      "Simulação de Saturno, das seis maiores luas e dos anéis com dados reais de massa, raio e distância. Feita em Java com Swing e Java2D, sem bibliotecas externas.",
-    tags: ["Java", "Swing", "Java2D", "Simulação"],
-    image: "/saturn/vista-padrao.webp",
-    imageAlt: "Saturno inclinado com a sombra dos anéis, as luas Encélado e Mimas em órbita e o painel com os dados do planeta.",
-    problem:
-      "Construir do zero, em Java, a física e o renderizador de uma simulação: manter as órbitas estáveis por muito tempo simulado e desenhar planeta e anéis por pixel em tempo real.",
-    highlights: [
-      "Gravitação N-corpos com integrador leapfrog, que conserva a energia ao longo da simulação",
-      "16.384 partículas de anel que mostram onde uma lua perturba a órbita original",
-      "Ray tracing por pixel do planeta e dos anéis, com sombras nos dois sentidos",
-      "Perfil real dos anéis, com a Divisão de Cassini e as falhas de Encke e Keeler, e rotação kepleriana",
-      "Física e renderização em paralelo, com testes automáticos de física e de desempenho",
-      "Câmera com zoom, inclinação e foco em um corpo; o botão direito cria uma lua nova",
-    ],
-    icon: "orbit",
-    accent: "blue",
-  },
-  {
-    id: "05",
-    key: "greeter",
-    name: "UMBRA",
-    role: "Tela de login Wayland para Linux",
-    status: "v1.0.0 · em uso diário",
-    description:
-      "Greeter cinematográfico para sessões Wayland, construído com Quickshell, QML e GLSL e integrado ao greetd e ao PAM. Em uso diário no meu Arch Linux.",
-    tags: ["QML", "Quickshell", "GLSL", "Linux"],
-    image: "/nocturne-greeter/umbra-auth.webp",
-    imageAlt: "Tela de autenticação do UMBRA com um planeta e anéis orbitais em violeta sobre fundo preto.",
-    problem:
-      "Substituir o gerenciador de login por uma interface própria sem abrir mão da autenticação real do sistema, da escolha de sessões e de uma recuperação segura.",
-    highlights: [
-      "Autenticação real pelo greetd e pelo PAM da distribuição",
-      "Seleção de usuários e de sessões Wayland instaladas, com memória da última escolha",
-      "Shader orbital, transição animada para a sessão e navegação completa por teclado",
-      "Indicadores de rede e de áudio visíveis antes do login, sem simular estado",
-      "Recuperação por login em modo texto, testada em máquina virtual",
-      "Pacote Arch Linux com hooks do pacman, preview na sessão atual e harness Wayland isolado",
-    ],
-    links: [
-      {
-        label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/UMBRA",
-        type: "source",
-      },
-    ],
-    icon: "lock-keyhole",
-    accent: "violet",
-  },
-  {
-    id: "06",
     key: "atlas",
     name: "ATLS",
     role: "Mapa navegável do contexto de um projeto",
@@ -178,60 +95,60 @@ export const PROJECTS = [
       "Trilhas guiadas, foco compartilhável pela URL e navegação por teclado",
       "Testes unitários e de ponta a ponta com um servidor OAuth falso do GitHub",
     ],
-    icon: "waypoints",
     accent: "blue",
   },
   {
-    id: "07",
-    key: "batpet",
-    name: "BATTY",
-    role: "Companheiro de desktop em Rust",
-    status: "Experimental",
+    id: "05",
+    key: "saturn",
+    name: "Saturn",
+    role: "Simulação gravitacional em Java",
+    status: "Java puro · sem dependências",
     description:
-      "Mascote em pixel-art que só existe enquanto é chamado no terminal: lê sinais da pasta atual, fala, aparece por alguns segundos e sai. Reage ao cursor e tem um ciclo de voo entre poleiros.",
-    image: "/batpet/poses.png",
-    imageAlt: "Morcego em pixel-art em estados de repouso, atenção e reação ao cursor.",
-    tags: ["Rust", "Bevy", "Desktop"],
+      "Simulação de Saturno, de 15 das suas luas e dos anéis com dados reais de massa, raio, distância e estrutura dos anéis. Feita em Java com Swing e Java2D, sem bibliotecas externas.",
+    tags: ["Java", "Swing", "Java2D", "Simulação"],
+    image: "/saturn/vista-padrao.webp",
+    imageAlt: "Saturno inclinado a 22 graus com a sombra do planeta nos anéis, as luas Mimas e Encélado em órbita e os painéis com o tempo simulado e os dados do planeta.",
     problem:
-      "Explorar animação e character acting responsivos em um companheiro de desktop sem perder a identidade visual em pixel-art.",
+      "Construir do zero, em Java, a física e o renderizador de uma simulação: manter as órbitas estáveis por muito tempo simulado e desenhar planeta e anéis por pixel em tempo real.",
     highlights: [
-      "Ativação pelo terminal, sem autostart, serviço ou processo de fundo",
-      "Falas escolhidas por pontuação a partir do repositório git e da hora",
-      "Olhar e postura reagem à posição e à proximidade do cursor",
-      "Ciclo de voo com decolagem, voo, retorno e pouso, guiado por aceleração limitada",
-      "Textura original preservada e movimentos quantizados na grade pixel-art",
+      "Gravitação N-corpos com integrador leapfrog: desvio de energia de ~2e-12 em 16 dias simulados",
+      "16.384 partículas de anel que mostram onde uma lua perturba a órbita original",
+      "Ray tracing por pixel do planeta achatado e dos anéis, com sombras nos dois sentidos e eclipses das luas",
+      "Perfil real dos anéis, com a Divisão de Cassini, as falhas de Encke e Keeler, spokes e rotação kepleriana",
+      "Física e renderização em paralelo, com testes automáticos de física e de desempenho",
+      "Câmera com zoom, inclinação e foco em um corpo; o botão direito cria uma lua nova",
+    ],
+    accent: "blue",
+  },
+  {
+    id: "06",
+    key: "greeter",
+    name: "UMBRA",
+    role: "Tela de login Wayland para Linux",
+    status: "v1.0.0 · em uso diário",
+    description:
+      "Greeter para sessões Wayland, construído com Quickshell, QML e GLSL e integrado ao greetd e ao PAM. Empacotado para Arch Linux, validado em máquina virtual e em uso diário no meu sistema.",
+    tags: ["QML", "Quickshell", "GLSL", "Linux"],
+    image: "/umbra/umbra-auth.webp",
+    imageAlt: "Tela de autenticação do UMBRA com a saudação, o campo de senha e a sessão Hyprland à esquerda e um planeta com anéis em violeta sobre fundo preto.",
+    problem:
+      "Substituir o gerenciador de login por uma interface própria sem abrir mão da autenticação real do sistema, da escolha de sessões e de uma recuperação segura.",
+    highlights: [
+      "Autenticação real pelo greetd e pelo PAM da distribuição, com mensagens de erro e de bloqueio da conta",
+      "Seleção de usuários e de sessões Wayland instaladas, com memória da última escolha",
+      "Shader orbital a ~30 fps em repouso, transição animada para a sessão e opção de movimento reduzido",
+      "Menus por teclado, indicador de Caps Lock e interface em português ou inglês",
+      "Recuperação por login em modo texto quando uma atualização do Qt exige recompilar o módulo",
+      "Pacote Arch Linux com hooks do pacman, preview na sessão atual e harness Wayland isolado",
     ],
     links: [
       {
         label: "Ver código-fonte",
-        href: "https://github.com/gustavomfg/BATTY",
+        href: "https://github.com/gustavomfg/UMBRA",
         type: "source",
       },
     ],
-    icon: "radar",
     accent: "violet",
-  },
-  {
-    id: "08",
-    key: "gesture",
-    name: "Gesture Control",
-    role: "Controle do computador com as mãos pela webcam",
-    status: "Protótipo",
-    description:
-      "Protótipo em Python que usa a webcam e o MediaPipe para mover o cursor, clicar, rolar, trocar de workspace no Hyprland e digitar em um teclado virtual com gestos das mãos.",
-    tags: ["Python", "MediaPipe", "Wayland", "Hyprland"],
-    problem:
-      "Transformar a posição de 21 pontos da mão em ações confiáveis no Wayland, sem disparar cliques ou teclas por acidente.",
-    highlights: [
-      "Mouse e teclado virtuais pelo /dev/uinput, funcionando em Wayland",
-      "Pinça para clicar e arrastar, dois dedos para rolar e deslize de mão aberta para trocar de workspace",
-      "Teclado QWERTY com as duas mãos e dois modos de digitação: juntar os dedos ou esperar sobre a tecla",
-      "Começa desarmado: nada é enviado ao sistema antes da confirmação",
-      "Filtro de movimento e rastreio que mantém cada mão identificada",
-      "Testes unitários para gestos, filtro, rastreio, teclado e integração com o Hyprland",
-    ],
-    icon: "hand",
-    accent: "cyan",
   },
 ] as const satisfies readonly Project[];
 
@@ -239,7 +156,7 @@ export const PROJECTS = [
 export const PROJECT_CHAPTERS: readonly { id: string; name: string; anchor: string }[] = [
   { id: "01", name: "NOCT", anchor: "projeto-studio" },
   { id: "02", name: "PULS", anchor: "sysmon" },
-  ...PROJECTS.filter((project) => project.key !== "studio" && project.key !== "portfolio").map((project) => ({
+  ...PROJECTS.slice(1).map((project) => ({
     id: project.id,
     name: project.name,
     anchor: `projeto-${project.key}`,
@@ -247,56 +164,16 @@ export const PROJECT_CHAPTERS: readonly { id: string; name: string; anchor: stri
 ];
 
 export const STACK = [
+  "Rust",
+  "Java",
+  "Spring Boot",
   "TypeScript",
   "React",
   "Next.js",
-  "Node.js",
-  "Electron",
   "Tauri",
-  "Java",
-  "Spring Boot",
-  "Rust",
-  "Python",
+  "Leptos",
   "PostgreSQL",
   "SQLite",
   "QML · GLSL",
   "Linux",
 ] as const;
-
-export const NOCTURNE_STUDIO_EVIDENCE = {
-  version: "v1.0.5",
-  keyEvidence: [
-    "Review, Build e Docs Mode com o modelo escolhido no workspace, sem depender de fornecedor",
-    "Workspace Memory, Local Second Brain e Awareness explicável por execução",
-    "Review Mode para arquitetura, segurança, testes, performance, documentação e manutenibilidade",
-    "Secure Provider System, Credential Vault e Typed IPC",
-    "Secure Electron Architecture com isolamento explícito entre renderer e processo principal",
-    "Provider Abstraction Layer, Packaging Pipeline e Automated CI Validation",
-  ],
-  reviewModeSummary: "As recomendações registram evidência, confiança, origem, responsável, severidade, justificativa e histórico de decisão, sempre sob revisão do desenvolvedor antes de alterações.",
-  architectureSummary: "Electron, React, TypeScript e SQLite; IPC tipado; contextIsolation habilitado; nodeIntegration desabilitado; preload/contextBridge como fronteira; comunicação controlada entre renderer e processo principal.",
-  providers: [
-    "Google Gemini",
-    "OpenRouter",
-    "DeepSeek",
-    "Groq",
-    "Mistral",
-    "xAI",
-    "Ollama",
-    "LM Studio",
-    "Endpoints compatíveis com chat completions",
-  ],
-  stateSummary: "Build Mode e Docs Mode também já fazem parte da versão estável, com aprovação de comandos, diff visível e rollback protegido.",
-} as const;
-
-export const SYSMON_EVIDENCE = {
-  stack: ["Rust", "Ratatui", "Crossterm", "Linux"],
-  version: "v0.1.3",
-  telemetry: ["CPU", "memória", "GPU", "rede", "armazenamento", "temperaturas", "processos"],
-  architecture: [
-    "Históricos limitados",
-    "Inventário dinâmico de hardware",
-    "Separação entre coleta, interpretação e visualização dos dados",
-  ],
-  healthEngine: "O Health Engine diferencia atividade de pressão do sistema e alimenta o System Pulse, uma representação procedural que reage ao estado agregado da máquina.",
-} as const;

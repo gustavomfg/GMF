@@ -5,14 +5,14 @@ import ScrollExpand from "@/components/react-bits/ScrollExpand";
 import { CINEMATIC_QUERY, useMediaQuery } from "@/hooks/use-media-query";
 
 const WORKSPACE = {
-  src: "/nocturne-studio/workspace-overview.png",
-  alt: "Workspace do NOCT com a lista de tarefas, a conversa, o pedido com os modos Implementar, Analisar e Documentar e o painel de acompanhamento",
+  src: "/noct/review-dark.webp",
+  alt: "NOCT no modo Revisar, tema escuro: a lista de projetos à esquerda, uma pergunta sobre o projeto e a resposta em Markdown com um trecho de código em Rust",
   width: 1440,
   height: 900,
 };
 
 /** Opens the flagship chapter: the real product grows to full bleed as the visitor scrolls. */
-export function StudioReveal({ version }: { version: string }) {
+export function StudioReveal({ status }: { status: string }) {
   const cinematic = useMediaQuery(CINEMATIC_QUERY);
 
   if (!cinematic) {
@@ -41,8 +41,8 @@ export function StudioReveal({ version }: { version: string }) {
       overlayScrim={0.35}
     >
       <div className="studio-reveal-caption">
-        <span>Projeto principal · {version}</span>
-        <p>O workspace real, com dados de demonstração: a conversa, o pedido com os três modos e o painel de acompanhamento lado a lado.</p>
+        <span>Projeto principal · {status}</span>
+        <p>A interface em Leptos com dados de demonstração: uma pergunta sobre o projeto em Revisar e a resposta desenhada em Markdown.</p>
       </div>
     </ScrollExpand>
   );

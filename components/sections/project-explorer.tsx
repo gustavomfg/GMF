@@ -9,7 +9,6 @@ import {
 } from "react";
 import { ProjectDialog } from "@/components/sections/project-dialog";
 import { useProjectDialog } from "@/hooks/use-project-dialog";
-import { usePointerGlow } from "@/hooks/use-pointer-glow";
 import { OPEN_PROJECT_EVENT, type OpenProjectDetail } from "@/lib/portfolio-events";
 import type { Project } from "@/types/portfolio";
 
@@ -49,26 +48,6 @@ export function ProjectExplorer({ children, projects }: ProjectExplorerProps) {
         origin={projectDialog.dialogOrigin}
       />
     </ProjectExplorerContext>
-  );
-}
-
-interface ProjectCardProps {
-  accent: Project["accent"];
-  children: ReactNode;
-  projectKey: string;
-}
-
-export function ProjectCard({ accent, children, projectKey }: ProjectCardProps) {
-  const updatePointerGlow = usePointerGlow();
-
-  return (
-    <article
-      className={`project-card project-${accent}`}
-      id={projectKey}
-      onPointerMove={updatePointerGlow}
-    >
-      {children}
-    </article>
   );
 }
 
