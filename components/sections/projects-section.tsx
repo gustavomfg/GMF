@@ -5,7 +5,6 @@ import { NocturneStudioEvidence } from "@/components/sections/nocturne-studio-ev
 import { ProjectExplorer } from "@/components/sections/project-explorer";
 import { ProjectStack } from "@/components/sections/project-stack";
 import { StudioReveal } from "@/components/sections/studio-reveal";
-import { NOCTURNE_STUDIO_EVIDENCE } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
 
 interface ProjectsSectionProps {
@@ -14,9 +13,7 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   const studio = projects[0];
-  const stackEntries = projects
-    .map((project, index) => ({ project, index }))
-    .filter(({ project }) => project.key !== "studio" && project.key !== "portfolio");
+  const stackEntries = projects.slice(1).map((project, index) => ({ project, index: index + 1 }));
   const studioSource = studio?.links?.find((link) => link.type === "source");
 
   if (!studio) return null;
@@ -32,13 +29,13 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           </p>
         </header>
 
-        <StudioReveal version={NOCTURNE_STUDIO_EVIDENCE.version} />
+        <StudioReveal status={studio.status ?? studio.role} />
 
         <div className="section-shell">
           <Reveal className="studio-feature" distance={18}>
             <div className="studio-feature-heading">
               <span>01 · Projeto principal</span>
-              <span>{NOCTURNE_STUDIO_EVIDENCE.version}</span>
+              <span>{studio.status ?? studio.role}</span>
             </div>
             <div className="studio-feature-intro" id="projeto-studio">
               <div>
@@ -66,26 +63,23 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               <div className="studio-evidence-groups">
                 <article className="studio-evidence-group">
                   <p className="studio-evidence-group-label">01 / Arquitetura</p>
-                  <h4>Workspace conectado por fronteiras explícitas</h4>
+                  <h4>Seis crates com fronteiras explícitas</h4>
                   <p>
-                    Electron, React, TypeScript e SQLite com IPC tipado. O renderer permanece isolado por contextIsolation, nodeIntegration desabilitado e uma fronteira preload/contextBridge; o Provider Abstraction Layer separa o workspace dos provedores
+                    O shell em Tauri 2 registra 41 comandos, liberados só para a janela principal. Contratos e limites ficam em noct-core, a persistência em noct-db, as credenciais em noct-secrets, o rollback em um worker separado e a interface em Leptos, compilada para WebAssembly.
                   </p>
                 </article>
                 <article className="studio-evidence-group">
-                  <p className="studio-evidence-group-label">02 / Review Mode</p>
-                  <h4>Recomendações que continuam sob revisão humana.</h4>
+                  <p className="studio-evidence-group-label">02 / Segurança</p>
+                  <h4>Nada muda no projeto sem aprovação.</h4>
                   <p>
-                    O Review Mode analisa arquitetura, segurança, testes, performance, documentação e manutenibilidade. Cada recomendação pode registrar evidência, confiança, origem, responsável, severidade, justificativa e histórico de decisão antes de qualquer alteração
+                    A IA lê só os arquivos que as regras de contexto permitem. Uma resposta pode propor alterações, que esperam em Construir ou Documentar; as regras de caminho recusam Git, CI, arquivos que rodam sozinhos e caminhos codificados, e cada aprovação pode ser desfeita.
                   </p>
                 </article>
                 <article className="studio-evidence-group">
                   <p className="studio-evidence-group-label">03 / Estado atual</p>
-                  <h4>Base implementada, com frentes em expansão</h4>
+                  <h4>Migração em fases, registrada em ADR</h4>
                   <p>
-                    Workspace Memory, Second Brain, Awareness explicável, Secure Provider System, Credential Vault, Typed IPC, Packaging Pipeline e CI Validation estão implementados. {NOCTURNE_STUDIO_EVIDENCE.stateSummary}
-                  </p>
-                  <p className="studio-evidence-providers">
-                    Providers documentados: {NOCTURNE_STUDIO_EVIDENCE.providers.join(", ")}.
+                    Fundação, persistência e o chat com o OpenRouter estão prontos; outros provedores e o loop de ferramentas ainda estão sendo portados. A versão anterior, em Electron e TypeScript, chegou à v1.0.5 e segue preservada em uma tag do repositório.
                   </p>
                 </article>
               </div>
@@ -100,7 +94,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         <section className="project-deck-section" aria-labelledby="other-projects-title">
           <div className="index-heading section-shell">
             <h3 id="other-projects-title">Outros projetos</h3>
-            <p>Ferramentas para Linux, uma simulação em Java, uma aplicação full stack e protótipos em andamento</p>
+            <p>Uma ferramenta de hardware para Linux, uma aplicação full stack em Java, uma simulação física e a tela de login do meu sistema</p>
           </div>
           <ProjectStack entries={stackEntries} />
         </section>

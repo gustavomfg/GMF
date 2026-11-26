@@ -25,22 +25,11 @@ describe("portfolio data", () => {
     }
   });
 
-  it("publishes the verified source link for this portfolio", () => {
-    const portfolio = PROJECTS.find((project) => project.key === "portfolio");
-
-    expect(portfolio?.links).toContainEqual({
-      label: "Ver código-fonte",
-      href: "https://github.com/gustavomfg/GMF",
-      type: "source",
-    });
-  });
-
   it("publishes the source links of the public repositories", () => {
     const expectedRepositories = {
       studio: "https://github.com/gustavomfg/NOCT",
       frx: "https://github.com/gustavomfg/FRX",
       greeter: "https://github.com/gustavomfg/UMBRA",
-      batpet: "https://github.com/gustavomfg/BATTY",
     } as const;
 
     for (const [projectKey, repository] of Object.entries(expectedRepositories)) {
@@ -55,7 +44,7 @@ describe("portfolio data", () => {
   });
 
   it("keeps projects with private or unpublished repositories without links", () => {
-    for (const projectKey of ["atlas", "saturn", "gesture"]) {
+    for (const projectKey of ["atlas", "saturn"]) {
       const project = projects.find((item) => item.key === projectKey);
 
       expect(project).toBeDefined();

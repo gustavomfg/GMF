@@ -69,11 +69,6 @@ function ProjectSheet({ project, index }: { project: Project; index: number }) {
         <p className="project-role">{project.role}</p>
         <h4 id={`projeto-${project.key}-title`}>{project.name}</h4>
         <p className="project-sheet-description">{project.description}</p>
-        {project.key === "batpet" ? (
-          <p className="project-index-live">
-            <span aria-hidden="true" /> Versão web pendurada no topo desta página, reagindo ao seu cursor.
-          </p>
-        ) : null}
         <ul className="project-index-tags" aria-label={`Tecnologias de ${project.name}`}>
           {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
         </ul>

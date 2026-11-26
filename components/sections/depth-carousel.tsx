@@ -5,7 +5,6 @@ import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, PointerEvent a
 import { ArrowUpRight, Code2 } from "lucide-react";
 import gsap from "gsap";
 import Image from "next/image";
-import { SYSMON_EVIDENCE } from "@/data/portfolio";
 
 export interface SysmonCarouselItem {
   label: string;
@@ -409,7 +408,7 @@ export function SysmonDepthShowcase() {
           <p className="project-role">Monitor de sistema</p>
           <h3 id="sysmon-title">PULS</h3>
           <p>Monitor de sistema em Rust para telemetria de CPU, memória, GPU, rede, armazenamento, temperaturas e processos. A arquitetura separa coleta, interpretação e visualização, e um narrador de eventos registra as mudanças de saúde que persistem.</p>
-          <p className="sysmon-stack">{SYSMON_EVIDENCE.stack.join(" · ")}</p>
+          <p className="sysmon-stack">Rust · Ratatui · Crossterm · Linux</p>
           <a className="studio-source-link" href="https://github.com/gustavomfg/PULS" target="_blank" rel="noreferrer">
             <Code2 size={15} aria-hidden="true" /> Ver código-fonte
             <ArrowUpRight size={15} aria-hidden="true" />

@@ -34,11 +34,11 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 
 ## Capabilities and Constraints
 
-- Gustavo é estudante de Análise e Desenvolvimento de Sistemas e busca iniciar sua carreira como desenvolvedor Full Stack.
-- Seus principais interesses são arquitetura de software, backend, aplicações desktop e tecnologias web modernas.
-- TypeScript e JavaScript são linguagens de uso diário; Java é sua principal linguagem acadêmica; Python está em aprendizado; Rust tem evidência em projetos.
-- As tecnologias confirmadas incluem React, Node.js, REST APIs, Electron, HTML, CSS e SQLite, além das ferramentas de desenvolvimento registradas em `IDENTITY.md`.
-- NOCT e PULS são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. FRX, Saturn, UMBRA, ATLS, BATTY e Gesture Control também devem ser apresentados de acordo com suas evidências. ATLS e Saturn têm repositório privado e o Gesture Control ainda não foi publicado: aparecem sem link até o autor decidir publicá-los.
+- Gustavo é estudante de Análise e Desenvolvimento de Sistemas e procura a primeira oportunidade em TI (desenvolvimento, suporte técnico ou infraestrutura). No LinkedIn se apresenta como desenvolvedor Rust e Java de ferramentas de sistema e apps desktop, com Linux no dia a dia.
+- Hoje aprofunda Java para back-end e Rust para software de sistema; TypeScript e React aparecem no ATLS, no FRX e neste portfólio.
+- As tecnologias confirmadas incluem Rust, Tauri, Leptos, Java, Spring Boot, PostgreSQL, SQLite, React, Next.js, QML e GLSL, além das ferramentas de desenvolvimento registradas em `IDENTITY.md`.
+- NOCT e PULS são projetos prioritários e devem receber destaque proporcional à profundidade técnica de cada um. FRX, ATLS, Saturn e UMBRA completam a seleção. BATTY e Gesture Control saíram da lista de projetos (o BATTY continua como mascote no topo da página). ATLS e Saturn têm repositório privado e aparecem sem link.
+- O NOCT foi reescrito em Rust (Tauri 2, Leptos, SQLite) depois da v1.0.5 em Electron; a versão Rust ainda não tem release e deve ser apresentada como em desenvolvimento.
 - Java tem evidência no Saturn (Java puro) e na API do ATLS (Spring Boot e PostgreSQL). O ATLS está em desenvolvimento e só deve ser apresentado como concluído ou público quando houver evidência verificável de que está pronto.
 - Não inventar ou exagerar experiência, métricas, números, tecnologias, resultados, conquistas, responsabilidades ou maturidade profissional.
 - Não apresentar Gustavo como desenvolvedor sênior. A comunicação deve transmitir competência, curiosidade técnica, capacidade de construir software real e potencial de crescimento.
@@ -53,14 +53,12 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - Clareza, legibilidade e hierarquia têm prioridade sobre ornamentação.
 - Evitar excesso de gradientes, glassmorphism, cards sem função, textos gigantes, badges em excesso e padrões comuns de portfólios genéricos.
 - Animações devem ter propósito, respeitar preferências de movimento reduzido e nunca competir com o conteúdo.
-- Os ativos visuais atuais incluem `public/nocturne-mark.svg` e `public/nocturne-eclipse.svg`; seu uso não altera a prioridade da identidade pessoal de Gustavo.
 
 ## Evidence on Hand
 
 - `IDENTITY.md`: fonte canônica da identidade profissional, competências, filosofia de engenharia, objetivos, contatos e projetos públicos.
 - `data/portfolio.ts`: conteúdo estruturado atualmente exibido no portfólio.
 - `public/curriculo-gustavo-maquias.pdf`: currículo atual publicado sem telefone nem localização pessoal.
-- `public/batpet/poses.png`: evidência visual de estados do BATTY.
 - `README.md`: arquitetura, stack, comandos e práticas de qualidade deste projeto.
 - Repositório público do portfólio: https://github.com/gustavomfg/GMF
 - NOCT: https://github.com/gustavomfg/NOCT
@@ -68,7 +66,6 @@ A transição profissional de Gustavo da indústria para o desenvolvimento pode 
 - Saturn: repositório privado (sem link público)
 - UMBRA: https://github.com/gustavomfg/UMBRA
 - ATLS: repositório privado, em desenvolvimento (sem link público)
-- Gesture Control: repositório local, ainda não publicado
 - PULS: https://github.com/gustavomfg/PULS
 - BATTY: https://github.com/gustavomfg/BATTY
 - Perfil no GitHub: https://github.com/gustavomfg

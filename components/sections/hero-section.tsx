@@ -9,7 +9,7 @@ import VariableProximity from "@/components/react-bits/VariableProximity";
 import { HeroLanyardShell } from "@/components/sections/hero-lanyard-shell";
 import { PROJECT_CHAPTERS } from "@/data/portfolio";
 
-const CRAFT = ["aplicações web", "apps desktop", "ferramentas para Linux", "APIs em Java"];
+const CRAFT = ["ferramentas de sistema", "apps desktop", "APIs em Java", "ferramentas para Linux"];
 const STAR_COLORS = ["#c6b3ff", "#9167ff", "#5d8aff", "#f4f2f8"];
 
 export function HeroSection() {
@@ -55,7 +55,7 @@ export function HeroSection() {
             />
           </h1>
           <p className="hero-x-role">
-            <span>Desenvolvedor de software. Construo</span>{" "}
+            <span>Desenvolvedor Rust e Java. Construo</span>{" "}
             <RotatingText
               texts={CRAFT}
               rotationInterval={2600}
@@ -65,7 +65,7 @@ export function HeroSection() {
             />
           </p>
           <p className="hero-x-intro">
-            Estudante de ADS na UniFil. Aprendo construindo projetos reais, com foco em arquitetura, backend e interfaces que explicam o que fazem.
+            Estudante de ADS na UniFil. Uso Linux no dia a dia e aprendo construindo: boa parte dos meus projetos nasceu de problemas reais que eu quis entender e resolver.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projetos">

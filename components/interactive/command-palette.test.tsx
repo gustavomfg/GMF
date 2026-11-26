@@ -61,11 +61,11 @@ describe("CommandPalette", () => {
     render(<CommandPalette />);
 
     openCommandPalette();
-    await user.type(await screen.findByRole("combobox"), "bevy");
+    await user.type(await screen.findByRole("combobox"), "spring boot");
     await user.keyboard("{Enter}");
 
     expect(listener).toHaveBeenCalledTimes(1);
-    expect((listener.mock.calls[0][0] as CustomEvent).detail).toEqual({ key: "batpet" });
+    expect((listener.mock.calls[0][0] as CustomEvent).detail).toEqual({ key: "atlas" });
     window.removeEventListener(OPEN_PROJECT_EVENT, listener);
   });
 

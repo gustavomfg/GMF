@@ -187,23 +187,6 @@
 /* Sections focused programmatically (palette or mobile menu) only move the reading position. */
 [id][tabindex="-1"]:focus { outline: none; }
 
-/* Project index: a live pointer from BATTY's card to the web version above. */
-.project-index-live {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 14px;
-  color: var(--text-label);
-  font-family: var(--font-mono);
-  font-size: var(--font-caption);
-  letter-spacing: .03em;
-}
-.project-index-live span { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgb(120 224 178 / 14%); }
-
-@media (max-width: 1000px), (hover: none) {
-  .project-index-live { display: none; }
-}
-
 /* BATTY: the Rust desktop companion, hanging from the navigation rail. */
 .batpet {
   --batpet-scale: 2;

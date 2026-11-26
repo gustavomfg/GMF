@@ -107,16 +107,17 @@ Primary technologies:
 
 ## Desktop Development
 
-Creating cross-platform desktop applications using web technologies while following secure Electron architecture principles.
+Creating cross-platform desktop applications with a Rust core and a web or WebAssembly interface.
 
 Primary technology:
 
-- Electron
+- Tauri 2 (NOCT, FRX)
 
 Also used in projects:
 
-- Tauri (FRX)
+- Leptos compiled to WebAssembly (NOCT)
 - Java Swing/Java2D (Saturn)
+- Electron (NOCT up to v1.0.5, before the Rust rewrite)
 
 ---
 
@@ -177,20 +178,17 @@ They should always be presented as personal engineering projects rather than pro
 
 ## NOCT
 
-AI-powered software engineering workspace focused on project-oriented development instead of prompt-oriented workflows.
+AI-powered software engineering workspace focused on project-oriented development instead of prompt-oriented workflows. Released up to v1.0.5 in Electron and TypeScript, then rewritten in Rust (in development, no Rust release yet).
 
 Main areas explored:
 
-- Workspace Memory
-- Second Brain
-- Awareness
-- Review Mode
-- Multi-provider AI support
-- Secure Electron architecture
-- SQLite persistence
-- Documentation-first development
-- CI/CD
-- Cross-platform releases
+- Cargo workspace with six crates: Tauri 2 shell, core contracts, SQLite persistence, credential vault, rollback worker and Leptos interface
+- SQLite with 32 migrations, backups, recovery snapshots and atomic writes
+- Provider credential vault with the master key in the operating system credential store
+- OpenRouter chat with an HTTPS-only transport that checks every resolved address
+- AI-proposed file changes approved one at a time, with undo
+- Phased migration recorded in an ADR
+- CI on Linux, Windows and macOS with cargo deny and cargo audit
 
 ---
 

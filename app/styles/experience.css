@@ -287,7 +287,6 @@
 .project-sheet .project-role { color: color-mix(in srgb, var(--project-accent) 55%, var(--text-bright)); }
 .project-sheet h4 { margin: 0; color: var(--text); font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 500; line-height: 1; letter-spacing: -.045em; }
 .project-sheet-description { max-width: 46ch; margin: 0; color: var(--muted); font-size: clamp(.92rem, 1.05vw, 1rem); line-height: 1.7; }
-.project-sheet .project-index-live { margin: 0; }
 
 .project-sheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 10px; padding-top: 20px; border-top: 1px solid var(--line); }
 
@@ -317,38 +316,6 @@
 
 .project-evidence--frx .project-evidence-image,
 .project-evidence--atlas .project-evidence-image { object-position: 0 0; }
-
-/* Hand-tracking diagram: stands in for a screenshot, since the prototype's window is a live camera feed. */
-.project-evidence--gesture {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  background:
-    radial-gradient(ellipse 60% 55% at 50% 52%, color-mix(in srgb, var(--cyan) 9%, transparent), transparent 72%),
-    var(--surface-visual);
-}
-
-.hand-landmarks { width: 100%; height: 100%; min-height: 0; }
-.hand-landmarks-bones line { stroke: color-mix(in srgb, var(--cyan) 62%, var(--surface)); stroke-width: 2; stroke-linecap: round; }
-.hand-landmarks-points circle { fill: var(--surface-visual); stroke: var(--cyan); stroke-width: 2; }
-.hand-landmarks-pinch { stroke: var(--violet-soft); stroke-width: 1.5; stroke-dasharray: 3 6; stroke-linecap: round; }
-.hand-landmarks-cursor { fill: none; stroke: var(--text); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: hand-cursor 2.8s var(--ease-out) infinite; }
-.hand-landmarks-notes path { fill: none; stroke: var(--line-strong); stroke-width: 1; }
-.hand-landmarks-notes text { fill: var(--text-bright); font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em; }
-
-.project-evidence--gesture .project-evidence-caption {
-  margin: 0;
-  padding: 12px 18px;
-  border-top: 1px solid var(--line);
-  color: var(--text-label);
-  font-family: var(--font-mono);
-  font-size: var(--font-caption);
-  letter-spacing: .03em;
-}
-
-@keyframes hand-cursor {
-  0%, 100% { transform: scale(1); opacity: .9; }
-  50% { transform: scale(.62); opacity: .5; }
-}
 
 /* ---------- Contact ---------- */
 
@@ -384,5 +351,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .status-dot, .hand-landmarks-cursor { animation: none; }
+  .status-dot { animation: none; }
 }

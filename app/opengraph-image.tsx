@@ -42,7 +42,7 @@ export default function OpenGraphImage() {
               Gustavo Maquias
             </div>
             <div style={{ color: "#b9b2c7", display: "flex", fontSize: 30 }}>
-              Desenvolvimento de software, arquitetura e projetos reais.
+              Rust e Java · ferramentas de sistema e apps desktop
             </div>
           </div>
           <div style={{ color: "#777083", display: "flex", fontSize: 20 }}>

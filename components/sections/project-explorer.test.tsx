@@ -83,7 +83,7 @@ describe("ProjectExplorer", () => {
     }));
 
     expect(screen.getByRole("link", { name: "Ver código-fonte" }).getAttribute("href"))
-      .toBe("https://github.com/gustavomfg/GMF");
+      .toBe("https://github.com/gustavomfg/FRX");
   });
 
   it("fecha ao clicar no backdrop", async () => {
